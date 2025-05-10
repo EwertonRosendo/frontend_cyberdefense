@@ -1,0 +1,342 @@
+/* ========== VARIÁVEIS DE TEMA ========== */
+/* Variáveis de cores para o tema claro (padrão) */
+:root {
+  --bg-body: #f9fafb;
+  --bg-white: #ffffff;
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --text-tertiary: #374151;
+  --border-color: #e5e7eb;
+  --input-border: #d1d5db;
+  --input-text: #111827;
+  --input-placeholder: #adaebc;
+  --button-primary: #1b6de0;
+  --button-hover: #1658b3;
+  --link-color: #0058d2;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Variáveis de cores para o tema escuro */
+[data-theme="dark"] {
+  --bg-body: #111827;
+  --bg-white: #1f2937;
+  --text-primary: #ffffff;
+  --text-secondary: #e5e7eb;
+  --text-tertiary: #d1d5db;
+  --border-color: #374151;
+  --input-border: #4b5563;
+  --input-text: #ffffff;
+  --input-placeholder: #9ca3af;
+  --button-primary: #3b82f6;
+  --button-hover: #2563eb;
+  --link-color: #60a5fa;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* ========== ESTILOS GLOBAIS ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+body {
+  background-color: var(--bg-body);
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========== ESTILOS DO CABEÇALHO ========== */
+header {
+  width: 100%;
+  height: 61px;
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+}
+
+.header-content {
+  width: 1280px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.shield-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.portal-name {
+  color: var(--text-primary);
+  font-size: 20px;
+  line-height: 20px;
+}
+
+/* Estilos do botão de tema */
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  margin-left: 16px;
+}
+
+.theme-toggle:hover {
+  background-color: var(--bg-body);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--text-primary);
+}
+
+/* ========== ESTILOS DO CONTEÚDO PRINCIPAL ========== */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.login-card {
+  width: 448px;
+  padding: 32px;
+  background-color: var(--bg-white);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.login-title {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 400;
+  color: var(--button-primary);
+  margin-bottom: 16px;
+}
+
+.login-subtitle {
+  font-size: 16px;
+  line-height: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+/* ========== ESTILOS DO FORMULÁRIO ========== */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--text-tertiary);
+}
+
+.form-group input {
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--input-text);
+  background-color: var(--bg-white);
+}
+
+.form-group input::placeholder {
+  color: var(--input-placeholder);
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.remember-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.remember-option input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--input-border);
+  border-radius: 1px;
+}
+
+.remember-option label {
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--text-secondary);
+}
+
+.forgot-password {
+  font-size: 14px;
+  line-height: 14px;
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.login-button {
+  height: 40px;
+  background-color: var(--button-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  line-height: 19px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.login-button:hover {
+  background-color: var(--button-hover);
+}
+
+/* ========== ESTILOS DOS LINKS DE CADASTRO ========== */
+.signup-link {
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
+.signup-text {
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--text-secondary);
+}
+
+.signup-action {
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+/* ========== ESTILOS DOS TERMOS ========== */
+.terms-container {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.terms-text {
+  font-size: 14px;
+  line-height: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+
+.terms-links {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.terms-link {
+  font-size: 14px;
+  line-height: 14px;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.terms-separator {
+  font-size: 14px;
+  line-height: 14px;
+  color: var(--text-secondary);
+}
+
+/* ========== ESTILOS DO RODAPÉ ========== */
+footer {
+  width: 100%;
+  height: 53px;
+  background-color: var(--bg-white);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-content {
+  width: 1280px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.copyright {
+  font-size: 14px;
+  line-height: 14px;
+  color: var(--text-secondary);
+}
+
+/* ========== ESTILOS RESPONSIVOS ========== */
+@media (max-width: 768px) {
+  .login-card {
+    width: 90%;
+    max-width: 448px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 24px;
+  }
+
+  .header-content {
+    padding: 0 16px;
+  }
+
+  .login-title {
+    font-size: 22px;
+  }
+
+  .login-subtitle {
+    font-size: 14px;
+  }
+}

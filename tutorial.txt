@@ -1,0 +1,74 @@
+só para relembrar: () => {}      isso é uma arrow function
+
+instalar o node
+
+instalar vscode
+
+ctrl + j abre o terminarl no vscode
+
+foi intalado o tailwind pela extensão
+
+foi usado o codigo no terminal: npm create vite@5.5.2 .  
+
+foi escolhido o framework react
+
+linguagem javascript
+
+npm install
+
+explicação dos arquivos:
+
+package.json:é um arquivo do node tem script de inicialização(dev), tem as dependencias, tudo que precisa para rodar
+
+index.html(é o html exibido na aplicação) isso aqui é o (SPA SINGLE PAGE APLICATION), ou seja o conteúdo inserido
+nessa página é inserido por via de JavaScript do React
+
+---------------------------------------------npm run dev (isso starta o projeto)-----------------------------------
+                                    main.jsx
+
+src/main.jsx(os imports dessa página são importante) se está na mesma pasta então é só usar "./nomedoarquivo"; 
+(se quiser sair da pasta é "../nomedoarquivo")
+createRoot(essa função cria a aplicação react e renderizar no id root que está no arquivo index e para renderizar
+sempre a primeira letra do arquivo tem que ser maiúscula exemplo:<App />)
+
+ 					App.jsx
+
+IMPORTANTE o State atualiza a variavel e a Tela, então para mudar o visual por variavel precisa do useState
+exemplo de use state: const [variavel1, setVariavel1] = useState('aqui coloca o  inicial');
+setVariavel1(blablabla)          --------isso altera a variavel Variavel1-----     
+
+precisa criar uma função
+
+só pode ter 1 <div> </div>
+
+function App() {
+(aqui você pode colocar as variaveis para usar) exemplo:
+	const variavel1 = aprendendo;
+  return (
+-----------------------------------------------aqui tem o conteúdo da função segue exemplo abaixo-------------------
+    <div>
+	<h1>Olá mundo </h1>
+
+	<h1>{variavel1} </h1>       (dessa forma se usa variavel no html do react)
+
+	<button
+        onClick={() => {
+          setVariavel1("flui clicado!");
+        }}
+      >
+        Mudar mensagem
+      </button>
+
+    </div>
+ );
+}
+
+export default App;             (isso aqui exporta a função)
+
+-----------------------------------------agora crie uma pasta chamada components dentro da pasta src--------------
+agora crie um arquivo do componente, no final do nome do componente tem que ter .jsx
+
+para passar parametros de uma rota para outra precisa de querryparams 1:26:00 no video
+
+
+
