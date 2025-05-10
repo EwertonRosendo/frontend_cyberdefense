@@ -60,7 +60,7 @@ function Home() {
 
       <main className="main-frame">
         <section className="section hero-section">
-          <div className="container">
+          <div>
             <div className="hero-content">
               <h1 className="hero-title">
                 Está sofrendo alguma denúncia sobre práticas de cyberbullying?
@@ -77,7 +77,7 @@ function Home() {
         </section>
 
         <section className="section features-section">
-          <div className="container">
+          <div >
             <div className="features-container">
               <div className="feature-card">
                 <img
@@ -122,7 +122,7 @@ function Home() {
         </section>
 
         <section className="section how-it-works-section">
-          <div className="container">
+          <div >
             <h2 className="section-title">Como Funciona</h2>
             <div className="steps-container">
               <div className="step">
@@ -165,7 +165,7 @@ function Home() {
         </section>
 
         <section className="section cta-section">
-          <div className="container">
+          <div >
             <div className="cta-content">
               <h2 className="section-title">
                 Pronto Para Nos Enviar Seu Caso?
