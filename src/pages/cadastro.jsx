@@ -40,7 +40,7 @@ function Cadastro() {
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                style="display: none;"
+                style={{display: none}}
               >
                 <path
                   strokeLinecap="round"
@@ -92,7 +92,7 @@ function Cadastro() {
                 />
               </div>
 
-              <div className="remember-option" style="margin-bottom: 20px;">
+              <div className="remember-option" style={{marginBottom: "20px"}}>
                 <input type="checkbox" id="remember" />
                 <label>Lembrar Senha?</label>
               </div>
