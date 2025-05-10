@@ -1,4 +1,4 @@
-import "./Analise.css";
+import "./analise.css";
 
 function Analise() {
   return (
