@@ -37,7 +37,7 @@ function Analise() {
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  style="display: none;"
+                  style={{display: "none"}}
                 >
                   <path
                     strokeLinecap="round"
