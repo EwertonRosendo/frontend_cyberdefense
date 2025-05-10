@@ -40,7 +40,7 @@ function Cadastro() {
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                style={{display: none}}
+                style={{display: "none"}}
               >
                 <path
                   strokeLinecap="round"
@@ -98,7 +98,7 @@ function Cadastro() {
               </div>
 
               <button type="submit" className="login-button">
-                <a href="">Cadastrar</a>{" "}
+                <a href="">Cadastrar</a>
               </button>
             </form>
 
