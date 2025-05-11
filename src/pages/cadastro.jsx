@@ -99,7 +99,7 @@ function Cadastro() {
                 <label>Lembrar Senha?</label>
               </div>
 
-              <button type="submit" className="login-button">
+              <button onClick={() => navigate('/login')}  type="submit" className="login-button">
                 <a href="">Cadastrar</a>
               </button>
             </form>

@@ -108,9 +108,9 @@ function Login() {
 
             <div className="signup-link">
               <span className="signup-text">não tem uma conta?</span>
-              <a href="" className="signup-action">
+              <button onClick={() => navigate('/cadastro')} href="" className="signup-action">
                 Click aqui
-              </a>
+              </button>
             </div>
 
             <div className="terms-container">
