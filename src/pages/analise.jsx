@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import "./analise.css";
 
 function Analise() {
+  const navigate = useNavigate(); 
   return (
     <body>
       <header className="site-header">

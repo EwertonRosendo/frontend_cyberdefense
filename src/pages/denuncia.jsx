@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import "./Denuncia.css";
 
 function Denuncia() {
+  const navigate = useNavigate(); 
   return (
     <body>
       <div className="container">
@@ -108,7 +110,7 @@ function Denuncia() {
                   placeholder="Por favor, forneça um contexto sobre o seu caso..."
                 ></textarea>
               </div>
-              <button className="submit-case-button" id="submit-case">
+              <button onClick={() => navigate('/conclusao')} className="submit-case-button" id="submit-case">
                 Enviar Caso
               </button>
               <p className="data-security">

@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import "./Cadastro.css";
 
 function Cadastro() {
+  const navigate = useNavigate(); 
   return (
     <body>
       <div className="container">

@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
 function Home() {
+  const navigate = useNavigate();  
+  
+
   return (
     <body>
       <header className="site-header">
@@ -68,7 +72,7 @@ function Home() {
               <p className="hero-subtitle">
                 Pronto para buscar ajuda? deixe nos mediar a situação.
               </p>
-              <button className="cta-button" id="redirect-button">
+              <button onClick={() => navigate('/login')} className="cta-button" id="redirect-button">
                 Click aqui e diga sua Versão
                 <br />
               </button>

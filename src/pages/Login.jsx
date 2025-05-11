@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 function Login() {
+  const navigate = useNavigate();  
+  
   return (
     <body>
       <div className="container">
@@ -94,6 +97,7 @@ function Login() {
               </div>
 
               <button
+                onClick={() => navigate('/denuncia')}
                 type="submit"
                 className="login-button"
                 id="redirect-button"
