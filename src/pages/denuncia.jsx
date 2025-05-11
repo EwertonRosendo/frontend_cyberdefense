@@ -3,6 +3,8 @@ import "./Denuncia.css";
 
 function Denuncia() {
   const navigate = useNavigate(); 
+  const apiUrl = import.meta.env.VITE_API_URL;
+  console.log("a variavel de ambiente:" + apiUrl)
   return (
     <body>
       <div className="container">
