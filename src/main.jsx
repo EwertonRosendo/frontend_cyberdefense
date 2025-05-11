@@ -9,7 +9,7 @@ import Denuncia from "./pages/denuncia.jsx";
 import Conclusao from "./pages/conclusao.jsx";
 import Analise from "./pages/analise.jsx";
 import Cadastro from "./pages/cadastro.jsx";
-
+import Paginainicial from "./pages/paginainicial.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -38,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: "analise",
     element: <Analise />,
+  },
+  {
+    path: "paginainicial",
+    element: <Paginainicial />,
   },
 ]);
 
