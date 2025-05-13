@@ -1,8 +1,8 @@
-import { useNavigate } from "react-router-dom";
+/* import { useNavigate } from "react-router-dom";*/
 import "./Conclusao.css";
 
 function Conclusao() {
-  const navigate = useNavigate(); 
+  /*const navigate = useNavigate(); */
   return (
     <body>
       <div className="container">
