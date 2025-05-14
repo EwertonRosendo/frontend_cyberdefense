@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import "./Denuncia.css";
+import "./denuncia.css";
 
 function Denuncia() {
   const navigate = useNavigate();

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import "./Cadastro.css";
+import "./cadastro.css";
 import axios from "axios";
 
 function Cadastro() {
