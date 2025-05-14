@@ -1,6 +1,6 @@
 // Importa o hook para navegar entre páginas
 import { useNavigate } from "react-router-dom";
-
+import axios from "axios";
 // Importa o CSS específico da página de login
 import "./Login.css";
 
@@ -11,6 +11,7 @@ import { useState } from "react";
 function Login() {
   // Cria a função de navegação (redirecionamento de rotas)
   const navigate = useNavigate();
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   // Estados para armazenar o e-mail e a senha digitados pelo usuário
   const [email, setEmail] = useState("");
@@ -66,21 +67,40 @@ function Login() {
           </div>
 
           {/* Botão de alternar tema (claro/escuro) */}
-          <button className="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
+          <button
+            className="theme-toggle"
+            id="theme-toggle"
+            aria-label="Alternar tema"
+          >
             {/* Ícone do Sol */}
-            <svg className="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 24 24" stroke="currentColor">
+            <svg
+              className="sun-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
               <path
-                strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
               />
             </svg>
 
             {/* Ícone da Lua (inicialmente escondido) */}
-            <svg className="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 24 24" stroke="currentColor" style={{ display: "none" }}>
+            <svg
+              className="moon-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              style={{ display: "none" }}
+            >
               <path
-                strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
               />
             </svg>
@@ -95,7 +115,9 @@ function Login() {
           <div className="login-header">
             <h1 className="login-title">Entra</h1>
             <p className="login-subtitle">
-              Todos merecem uma chance de<br />serem ouvidos
+              Todos merecem uma chance de
+              <br />
+              serem ouvidos
             </p>
           </div>
 
@@ -133,7 +155,9 @@ function Login() {
                 <input type="checkbox" id="remember" />
                 <label>Lembrar Senha?</label>
               </div>
-              <a href="#" className="forgot-password">Esqueceu a Senha?</a>
+              <a href="#" className="forgot-password">
+                Esqueceu a Senha?
+              </a>
             </div>
 
             {/* Botão de login */}
@@ -145,7 +169,10 @@ function Login() {
           {/* Link para página de cadastro */}
           <div className="signup-link">
             <span className="signup-text">não tem uma conta?</span>
-            <button onClick={() => navigate('/cadastro')} className="signup-action">
+            <button
+              onClick={() => navigate("/cadastro")}
+              className="signup-action"
+            >
               Click aqui
             </button>
           </div>
@@ -154,9 +181,13 @@ function Login() {
           <div className="terms-container">
             <p className="terms-text">Ao entrar, você concorda com nossos</p>
             <div className="terms-links">
-              <a href="#" className="terms-link">Termos de Serviço</a>
+              <a href="#" className="terms-link">
+                Termos de Serviço
+              </a>
               <span className="terms-separator">•</span>
-              <a href="#" className="terms-link">Política de Privacidade</a>
+              <a href="#" className="terms-link">
+                Política de Privacidade
+              </a>
             </div>
           </div>
         </div>

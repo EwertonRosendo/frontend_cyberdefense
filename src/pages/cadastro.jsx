@@ -1,64 +1,53 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./Cadastro.css";
+import axios from "axios";
 
 function Cadastro() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-
+  const apiUrl = import.meta.env.VITE_API_URL;
   const handleCadastro = async (e) => {
     e.preventDefault();
 
+    // Verificar se as senhas coincidem
     if (password !== confirmPassword) {
       alert("As senhas não coincidem.");
       return;
     }
 
-    if (email.trim().toLowerCase() === "adm@digitaldefense.com") {
-      alert("Não é permitido cadastrar com este e-mail.");
-      return;
-    }
-
     try {
-      // Verifica se o usuário já existe        metodo GET
-      const checkResponse = await fetch("http://localhost:3001/user");
-      const users = await checkResponse.json();
+      // Verificar se o email já existe
+      const response = await axios.get(`${apiUrl}/users.json`);
+      const users = response.data;
 
-      const usuarioExistente = users.find(
-        (u) => u.user?.email?.toLowerCase() === email.toLowerCase()
+      // Verificar se o email já está cadastrado
+      const userExists = Object.values(users).some(
+        (user) => user.email === email
       );
 
-      if (usuarioExistente) {
-        alert("Este e-mail já está cadastrado.");
+      if (userExists) {
+        alert("Usuário já cadastrado com esse email.");
         return;
       }
 
-      // Se não existir, cadastra
-      const createResponse = await fetch("http://localhost:3001/user", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      // Se o email não existe, realizar o cadastro
+      await axios.post(`${apiUrl}/users.json`, {
+        user: {
+          email: email,
+          password: password,
         },
-        body: JSON.stringify({
-          user: {
-            email,
-            password,
-          },
-        }),
       });
 
-      if (createResponse.ok) {
-        alert("Cadastro realizado com sucesso!");
-        navigate("/login");
-      } else {
-        const data = await createResponse.json();
-        alert(data.message || "Erro ao cadastrar. Tente novamente.");
-      }
+      // Exibir mensagem de sucesso e redirecionar
+      alert("Usuário foi cadastrado com sucesso!");
+      navigate("/login"); // Redireciona para a página de login após o cadastro
     } catch (error) {
-      console.error("Erro:", error);
-      alert("Erro ao conectar com o servidor.");
+      // Tratar erros da requisição
+      console.error("Erro ao cadastrar usuário:", error);
+      alert("Erro ao cadastrar usuário. Tente novamente.");
     }
   };
 
@@ -124,7 +113,11 @@ function Cadastro() {
             </p>
           </div>
 
-          <form className="login-form" id="cadastro-form" onSubmit={handleCadastro}>
+          <form
+            className="login-form"
+            id="cadastro-form"
+            onSubmit={handleCadastro}
+          >
             <div className="form-group">
               <label htmlFor="email">Seu e-mail</label>
               <input
@@ -174,9 +167,13 @@ function Cadastro() {
           <div className="terms-container">
             <p className="terms-text">Ao entrar, você concorda com nossos</p>
             <div className="terms-links">
-              <a href="#" className="terms-link">Termos de Serviço</a>
+              <a href="#" className="terms-link">
+                Termos de Serviço
+              </a>
               <span className="terms-separator">•</span>
-              <a href="#" className="terms-link">Política de Privacidade</a>
+              <a href="#" className="terms-link">
+                Política de Privacidade
+              </a>
             </div>
           </div>
         </div>
