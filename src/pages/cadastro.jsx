@@ -34,16 +34,22 @@ function Cadastro() {
       }
 
       // Se o email não existe, realizar o cadastro
-      await axios.post(`${apiUrl}/users.json`, {
-        user: {
-          email: email,
-          password: password,
-        },
-      });
-
-      // Exibir mensagem de sucesso e redirecionar
-      alert("Usuário foi cadastrado com sucesso!");
-      navigate("/login"); // Redireciona para a página de login após o cadastro
+      await axios
+        .post(`${apiUrl}/users.json`, {
+          user: {
+            email: email,
+            password: password,
+          },
+        })
+        .then(function (response) {
+          console.log(response.status);
+          if (response.status === 201) {
+            navigate("/login");
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
     } catch (error) {
       // Tratar erros da requisição
       console.error("Erro ao cadastrar usuário:", error);

@@ -27,27 +27,22 @@ function Login() {
       return; // Encerra a função aqui se for admin
     }
 
-    // Se não for admin, tenta autenticar com o servidor (API backend)
-    try {
-      // Requisição GET para o backend simulando uma busca de usuário
-      const response = await fetch("http://localhost:3001/user");
-      const data = await response.json(); // Converte o resultado da resposta para JSON
-
-      // Verifica se o usuário existe e se as credenciais coincidem
-      if (
-        data.user &&
-        data.user.email === email &&
-        data.user.password === password
-      ) {
-        navigate("/denuncia"); // Redireciona para a página principal do sistema
-      } else {
-        alert("E-mail ou senha incorretos."); // Alerta se os dados não forem compatíveis
-      }
-    } catch (error) {
-      // Caso ocorra um erro de rede ou no servidor
-      console.error("Erro ao fazer login:", error);
-      alert("Erro ao conectar com o servidor.");
-    }
+    await axios
+      .post(`${apiUrl}/sessions/create`, {
+        user: {
+          email: email,
+          password: password,
+        },
+      })
+      .then(function (response) {
+        console.log(response.status);
+        if (response.status === 200) {
+          navigate("/denuncia");
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   // Estrutura visual (JSX) da página de login
