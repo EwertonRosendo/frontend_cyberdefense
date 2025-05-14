@@ -2,9 +2,9 @@ import { useNavigate } from "react-router-dom";
 import "./Denuncia.css";
 
 function Denuncia() {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   const apiUrl = import.meta.env.VITE_API_URL;
-  console.log("a variavel de ambiente:" + apiUrl)
+  console.log("a variavel de ambiente:" + apiUrl);
   return (
     <body>
       <div className="container">
@@ -12,7 +12,7 @@ function Denuncia() {
           <div className="header-content">
             <div className="logo-container">
               <img
-                src="https://i.superesportes.com.br/QoSwud83MOFbOmOL7spboQiRuHs=/750x0/smart/imgsapp.mg.superesportes.com.br/app/noticia_126420360808/2021/11/17/3948189/20211117200218618057o.jpg"
+                src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
                 alt="Shield Icon"
                 className="shield-icon"
               />
@@ -112,7 +112,11 @@ function Denuncia() {
                   placeholder="Por favor, forneça um contexto sobre o seu caso..."
                 ></textarea>
               </div>
-              <button onClick={() => navigate('/conclusao')} className="submit-case-button" id="submit-case">
+              <button
+                onClick={() => navigate("/conclusao")}
+                className="submit-case-button"
+                id="submit-case"
+              >
                 Enviar Caso
               </button>
               <p className="data-security">
@@ -165,7 +169,7 @@ function Denuncia() {
               <button className="report-button">
                 <span>Reportar problema</span>
                 <img
-                  src="https://i.superesportes.com.br/QoSwud83MOFbOmOL7spboQiRuHs=/750x0/smart/imgsapp.mg.superesportes.com.br/app/noticia_126420360808/2021/11/17/3948189/20211117200218618057o.jpg"
+                  src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
                   alt="Report icon"
                   className="report-icon"
                 />

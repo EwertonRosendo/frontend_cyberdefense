@@ -89,7 +89,7 @@ function App() {
             <div className="features-container">
               <div className="feature-card">
                 <img
-                  src="https://i.superesportes.com.br/QoSwud83MOFbOmOL7spboQiRuHs=/750x0/smart/imgsapp.mg.superesportes.com.br/app/noticia_126420360808/2021/11/17/3948189/20211117200218618057o.jpg"
+                  src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
                   alt="Ícone de Segurança"
                   className="feature-icon"
                 />
@@ -102,7 +102,7 @@ function App() {
 
               <div className="feature-card">
                 <img
-                  src="https://i.superesportes.com.br/QoSwud83MOFbOmOL7spboQiRuHs=/750x0/smart/imgsapp.mg.superesportes.com.br/app/noticia_126420360808/2021/11/17/3948189/20211117200218618057o.jpg"
+                  src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
                   alt="Ícone de Análise Legal"
                   className="feature-icon"
                 />
@@ -115,7 +115,7 @@ function App() {
 
               <div className="feature-card">
                 <img
-                  src="https://i.superesportes.com.br/QoSwud83MOFbOmOL7spboQiRuHs=/750x0/smart/imgsapp.mg.superesportes.com.br/app/noticia_126420360808/2021/11/17/3948189/20211117200218618057o.jpg"
+                  src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
                   alt="Ícone de Privacidade"
                   className="feature-icon"
                 />
@@ -165,7 +165,7 @@ function App() {
                 </div>
                 <h3 className="step-title">Processo de Análise</h3>
                 <p className="step-description">
-                  As autoridades irão avaliar seu caso.
+                  A Instituição irá avaliar seu caso.
                 </p>
               </div>
             </div>
@@ -238,7 +238,7 @@ function App() {
               <ul className="footer-contact">
                 <li>
                   <img
-                    src="https://i.superesportes.com.br/QoSwud83MOFbOmOL7spboQiRuHs=/750x0/smart/imgsapp.mg.superesportes.com.br/app/noticia_126420360808/2021/11/17/3948189/20211117200218618057o.jpg"
+                    src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
                     alt="Email icon"
                     className="contact-icon"
                   />
@@ -246,7 +246,7 @@ function App() {
                 </li>
                 <li>
                   <img
-                    src="https://i.superesportes.com.br/QoSwud83MOFbOmOL7spboQiRuHs=/750x0/smart/imgsapp.mg.superesportes.com.br/app/noticia_126420360808/2021/11/17/3948189/20211117200218618057o.jpg"
+                    src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
                     alt="Phone icon"
                     className="contact-icon"
                   />

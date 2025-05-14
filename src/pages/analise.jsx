@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import "./analise.css";
 
 function Analise() {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
   return (
     <body>
       <header className="site-header">
@@ -39,7 +39,7 @@ function Analise() {
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  style={{display: "none"}}
+                  style={{ display: "none" }}
                 >
                   <path
                     strokeLinecap="round"
@@ -293,7 +293,7 @@ function Analise() {
                 <ul className="footer-contact">
                   <li>
                     <img
-                      src="https://i.superesportes.com.br/QoSwud83MOFbOmOL7spboQiRuHs=/750x0/smart/imgsapp.mg.superesportes.com.br/app/noticia_126420360808/2021/11/17/3948189/20211117200218618057o.jpg"
+                      src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
                       alt="Email icon"
                       className="contact-icon"
                     />
@@ -301,7 +301,7 @@ function Analise() {
                   </li>
                   <li>
                     <img
-                      src="https://i.superesportes.com.br/QoSwud83MOFbOmOL7spboQiRuHs=/750x0/smart/imgsapp.mg.superesportes.com.br/app/noticia_126420360808/2021/11/17/3948189/20211117200218618057o.jpg"
+                      src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
                       alt="Phone icon"
                       className="contact-icon"
                     />
