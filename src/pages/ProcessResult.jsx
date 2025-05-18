@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "./css/admp1.css"; // Ensure the CSS file is imported
+import "./admp1.css"; // Ensure the CSS file is imported
 
 const ProcessResult = () => {
   useEffect(() => {
