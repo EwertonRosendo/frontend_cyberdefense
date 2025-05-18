@@ -43,11 +43,11 @@ const router = createBrowserRouter([
     element: <Analise />,
   },
   {
-    path: "cadatrodecasos",
+    path: "cadastrodecasos",
     element: <CadastroDeCasos />,
   },
   {
-    path: "adminPage",
+    path: "adminpage",
     element: <AdminPage />,
   },
   {
