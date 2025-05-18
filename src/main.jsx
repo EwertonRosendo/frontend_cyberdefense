@@ -9,6 +9,9 @@ import Denuncia from "./pages/denuncia.jsx";
 import Conclusao from "./pages/conclusao.jsx";
 import Analise from "./pages/analise.jsx";
 import Cadastro from "./pages/cadastro.jsx";
+import CadastroDeCasos from "./pages/CadastroDeCasos.jsx";
+import AdminPage from "./pages/AdminPage.jsx";
+import UserProfile from "./pages/UserProfile.jsx";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +41,18 @@ const router = createBrowserRouter([
   {
     path: "analise",
     element: <Analise />,
+  },
+  {
+    path: "cadatrodecasos",
+    element: <CadastroDeCasos />,
+  },
+  {
+    path: "adminPage",
+    element: <AdminPage />,
+  },
+  {
+    path: "userprofile",
+    element: <UserProfile />,
   },
 ]);
 
