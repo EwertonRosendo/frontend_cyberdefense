@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import "./css/admp1.css"; // Ensure the CSS file is imported
+import { useEffect } from "react";
+import "./admp1.css"; // Ensure the CSS file is imported
 
 const UserProfile = () => {
   useEffect(() => {
