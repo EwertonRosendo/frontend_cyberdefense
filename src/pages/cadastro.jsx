@@ -19,21 +19,6 @@ function Cadastro() {
     }
 
     try {
-      // Verificar se o email já existe
-      const response = await axios.get(`${apiUrl}/users.json`);
-      const users = response.data;
-
-      // Verificar se o email já está cadastrado
-      const userExists = Object.values(users).some(
-        (user) => user.email === email
-      );
-
-      if (userExists) {
-        alert("Usuário já cadastrado com esse email.");
-        return;
-      }
-
-      // Se o email não existe, realizar o cadastro
       await axios
         .post(`${apiUrl}/users.json`, {
           user: {

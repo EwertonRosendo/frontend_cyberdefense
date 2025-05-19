@@ -1,12 +1,48 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import Cookies from "js-cookie";
 import "./denuncia.css";
+import axios from "axios";
 
 function Denuncia() {
   const navigate = useNavigate();
   const apiUrl = import.meta.env.VITE_API_URL;
-  console.log("a variavel de ambiente:" + apiUrl);
+  const userId = Cookies.get("userId");
+  const userToken = Cookies.get("userToken");
+
+  const [description, setDescription] = useState("");
+  const [files, setFiles] = useState([]);
+
+  const handleDenuncia = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append("case[user_id]", userId);
+    formData.append("case[description]", description);
+    files.forEach((file) => {
+      formData.append("case[images][]", file);
+    });
+
+    try {
+      const response = await axios.post(`${apiUrl}/cases.json`, formData, {
+        headers: {
+          Authorization: `Bearer ${userToken}`,
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      if (response.status === 201) {
+        navigate("/conclusao");
+        console.log(201);
+      }
+    } catch (error) {
+      console.error("Erro ao enviar denúncia:", error);
+      alert("Erro ao enviar denúncia. Tente novamente.");
+    }
+  };
+
   return (
-    <body>
+    <div>
       <div>
         <header>
           <div className="header-content">
@@ -18,7 +54,6 @@ function Denuncia() {
               />
               <span className="portal-name">CyberDefense</span>
             </div>
-
             <button
               className="theme-toggle"
               id="theme-toggle"
@@ -88,37 +123,44 @@ function Denuncia() {
               <div className="upload-area">
                 <div className="upload-instructions">
                   <p>
-                    Para fazer Upload da Evidência Arraste e solte seus arquivos
+                    Para fazer Upload da Evidência arraste e solte seus arquivos
                     aqui ou clique para procurar.
                   </p>
-                  <button className="select-files-button">
+                  <label htmlFor="file-upload" className="select-files-button">
                     Selecionar arquivos
-                  </button>
+                  </label>
                 </div>
                 <input
                   type="file"
                   id="file-upload"
                   className="file-upload"
                   multiple
+                  onChange={(e) => setFiles(Array.from(e.target.files))}
+                  accept=".png,.jpg,.jpeg,.pdf,.doc,.docx"
                 />
                 <p className="supported-formats">
                   Formatos suportados: PNG, JPG, PDF, DOC
                 </p>
               </div>
+
               <div className="case-description">
                 <label htmlFor="case-description">Descreva seu caso</label>
                 <textarea
                   id="case-description"
                   placeholder="Por favor, forneça um contexto sobre o seu caso..."
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
                 ></textarea>
               </div>
+
               <button
-                onClick={() => navigate("/conclusao")}
+                onClick={handleDenuncia}
                 className="submit-case-button"
                 id="submit-case"
               >
                 Enviar Caso
               </button>
+
               <p className="data-security">
                 Seus dados são seguros e confidenciais.
               </p>
@@ -178,7 +220,7 @@ function Denuncia() {
           </div>
         </footer>
       </div>
-    </body>
+    </div>
   );
 }
 

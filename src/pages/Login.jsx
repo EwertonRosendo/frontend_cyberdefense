@@ -1,4 +1,4 @@
-// Importa o hook para navegar entre páginas
+import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 // Importa o CSS específico da página de login
@@ -37,9 +37,18 @@ function Login() {
       .then(function (response) {
         console.log(response.status);
         if (response.status === 200) {
+          const userId = response.data.user.id;
+          const userToken = response.data.token;
+
+          Cookies.set("userId", userId, { expires: 1 });
+          Cookies.set("userToken", userToken, { expires: 1 });
+
+          console.log("id do usuário:" + userId);
+          console.log("token do usuário:" + userToken);
           navigate("/denuncia");
         }
       })
+
       .catch(function (error) {
         console.log(error);
       });

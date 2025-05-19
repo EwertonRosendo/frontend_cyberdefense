@@ -2,10 +2,13 @@
 import "./conclusao.css";
 import { useState } from "react";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 function Conclusao() {
   /*const navigate = useNavigate(); */
   /*const [email, setEmail] = useState("");*/
+  const userId = Cookies.get("userId");
+  const userToken = Cookies.get("userToken");
   const [respagressor, setRespAgressor] = useState("resposta do acusado");
   const [respinstituicao, setRespInstituicao] = useState(
     "Aguardando resposta da instituição..."
