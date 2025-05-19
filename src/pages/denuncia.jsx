@@ -7,7 +7,7 @@ function Denuncia() {
   console.log("a variavel de ambiente:" + apiUrl);
   return (
     <body>
-      <div className="container">
+      <div>
         <header>
           <div className="header-content">
             <div className="logo-container">

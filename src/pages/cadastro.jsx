@@ -58,7 +58,7 @@ function Cadastro() {
   };
 
   return (
-    <div className="container">
+    <div>
       <header>
         <div className="header-content">
           <div className="logo-container">

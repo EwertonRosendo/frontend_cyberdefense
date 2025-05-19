@@ -47,7 +47,7 @@ function Login() {
 
   // Estrutura visual (JSX) da página de login
   return (
-    <div className="container">
+    <div>
       {/* Cabeçalho da página */}
       <header>
         <div className="header-content">

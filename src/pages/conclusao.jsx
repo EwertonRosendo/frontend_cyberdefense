@@ -1,11 +1,37 @@
 /* import { useNavigate } from "react-router-dom";*/
 import "./conclusao.css";
+import { useState } from "react";
+import axios from "axios";
 
 function Conclusao() {
   /*const navigate = useNavigate(); */
+  /*const [email, setEmail] = useState("");*/
+  const [respagressor, setRespAgressor] = useState("resposta do acusado");
+  const [respinstituicao, setRespInstituicao] = useState(
+    "Aguardando resposta da instituição..."
+  );
+
+  /*const handleConclusao = async (e) => {
+    e.preventDefault(); // Evita o recarregamento da página ao enviar o formulário
+   
+    await axios
+      .post(`${apiUrl}/cases/`${id}`, {
+        user: {
+          email: email,
+          password: password,
+        },
+      })
+      .then(function (response) {
+        console.log(response.status);        
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };*/
+
   return (
     <body>
-      <div className="container">
+      <div>
         <header>
           <div className="header-content">
             <div className="logo-container">
@@ -82,19 +108,12 @@ function Conclusao() {
 
           <section className="resposta-agressor">
             <h2>Resposta do acusado</h2>
-            <div id="respostaTextoagressor">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugit
-              eligendi illum ut nam sequi necessitatibus expedita, error tenetur
-              rem, molestias quas officia doloribus? Voluptas ea aperiam
-              obcaecati reiciendis ipsum aspernatur?
-            </div>
+            <div id="respostaTextoagressor">{respagressor}</div>
           </section>
 
           <section className="resposta-escola">
             <h2>Resposta da Instituição</h2>
-            <div id="respostaTextoinstituição">
-              Aguardando resposta da instituição...
-            </div>
+            <div id="respostaTextoinstituição">{respinstituicao}</div>
           </section>
 
           <section className="review-process-section">
