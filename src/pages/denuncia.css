@@ -1,36 +1,8 @@
 /* ========== VARIÁVEIS DE TEMA ========== */
-:root {
-  --bg-body: #ffffff;
-  --bg-white: #ffffff;
-  --text-primary: #1f2937;
-  --text-secondary: #4b5563;
-  --text-tertiary: #374151;
-  --border-color: #e5e7eb;
-  --input-border: #d1d5db;
-  --input-text: #111827;
-  --input-placeholder: #adaebc;
-  --button-primary: #1b6de0;
-  --button-hover: #1658b3;
-  --link-color: #0058d2;
-  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-}
+
 
 /* Tema escuro */
-[data-theme="dark"] {
-  --bg-body: #111827;
-  --bg-white: #1f2937;
-  --text-primary: #ffffff;
-  --text-secondary: #e5e7eb;
-  --text-tertiary: #d1d5db;
-  --border-color: #374151;
-  --input-border: #4b5563;
-  --input-text: #ffffff;
-  --input-placeholder: #9ca3af;
-  --button-primary: #3b82f6;
-  --button-hover: #2563eb;
-  --link-color: #60a5fa;
-  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2);
-}
+
 
 /* ========== ESTILOS GLOBAIS ========== */
 * {
@@ -298,6 +270,7 @@ main {
   padding: 10px 20px;
   cursor: pointer;
   margin-top: 16px;
+  margin-bottom: 16px;
   transition: background-color 0.3s ease;
 }
 

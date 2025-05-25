@@ -126,7 +126,10 @@ function Denuncia() {
                     Para fazer Upload da Evidência arraste e solte seus arquivos
                     aqui ou clique para procurar.
                   </p>
-                  <label htmlFor="file-upload" className="select-files-button">
+                  <label htmlFor="file-upload" type="file"
+                  id="file-upload" className="select-files-button" multiple
+                  onChange={(e) => setFiles(Array.from(e.target.files))}
+                  accept=".png,.jpg,.jpeg,.pdf,.doc,.docx">
                     Selecionar arquivos
                   </label>
                 </div>
