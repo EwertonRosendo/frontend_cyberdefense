@@ -346,6 +346,15 @@ main {
   height: 16px;
 }
 
+.schoolname{  
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.questionstyle{
+  
+}
+
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
   .status-steps {

@@ -39,12 +39,15 @@ function Login() {
         if (response.status === 200) {
           const userId = response.data.user.id;
           const userToken = response.data.token;
+          const userSchool = response.data.user.school;
 
           Cookies.set("userId", userId, { expires: 1 });
           Cookies.set("userToken", userToken, { expires: 1 });
+          Cookies.set("userSchool", userSchool, { expires: 1 });
 
           console.log("id do usuário:" + userId);
           console.log("token do usuário:" + userToken);
+          console.log("escola do usuário:" + userSchool);
           navigate("/denuncia");
         }
       })

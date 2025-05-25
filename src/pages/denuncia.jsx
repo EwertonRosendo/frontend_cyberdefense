@@ -1,17 +1,25 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Cookies from "js-cookie";
 import "./denuncia.css";
 import axios from "axios";
+
 
 function Denuncia() {
   const navigate = useNavigate();
   const apiUrl = import.meta.env.VITE_API_URL;
   const userId = Cookies.get("userId");
   const userToken = Cookies.get("userToken");
+  const school = Cookies.get("userSchool");
 
   const [description, setDescription] = useState("");
   const [files, setFiles] = useState([]);
+  const [formData,setFormData] = ([]);
+  
+  const [questions, setQuestions] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [instituicao, setInstituicao] = useState(true);
+
 
   const handleDenuncia = async (e) => {
     e.preventDefault();
@@ -40,6 +48,52 @@ function Denuncia() {
       alert("Erro ao enviar denúncia. Tente novamente.");
     }
   };
+
+    
+  // Função para buscar as perguntas
+  const get_questions = async () => {
+  try {
+    const response = await axios.get(`${apiUrl}/school_questions/${school}`, {
+      headers: {
+        Authorization: `Bearer ${userToken}`,
+      },
+    });
+    console.log(response.data); 
+    setQuestions(response.data || []);  // Garante array
+  } catch (error) {
+    console.error('Erro ao buscar perguntas:', error);
+  } finally {
+    setLoading(false);
+  }
+};
+
+// Executa a função quando o componente monta
+useEffect(() => {
+  get_questions();
+}, []);
+
+// Função de renderização
+const renderQuestions = (questions) => {
+  if (!questions || questions.length === 0) {
+    return <p></p>;
+  }
+
+  return questions.map((question, index) => (
+    <div className="case-description" id={`question-${question.id}`} key={question.id}>      
+      <p className="questionstyle">{question.question}</p>
+
+      {/* Como não tem opções, coloque um campo para resposta */}
+      <textarea
+        name={`question-${question.id}`}
+        placeholder="Sua resposta..."
+        rows="3"
+        style={{ width: '100%', marginTop: '8px' }}
+      />
+    </div>
+  ));
+};
+  
+
 
   return (
     <div>
@@ -155,7 +209,15 @@ function Denuncia() {
                   onChange={(e) => setDescription(e.target.value)}
                 ></textarea>
               </div>
-
+                <div>
+                  <p className="schoolname">
+                    {loading ? "Perguntas da sua instituição" : "Sua Instituição não possui perguntas extras"}
+                  </p>
+                </div>
+              <div>
+                {loading ? <p>Carregando perguntas...</p> : renderQuestions(questions)}
+              </div>
+      
               <button
                 onClick={handleDenuncia}
                 className="submit-case-button"

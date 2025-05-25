@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import "./admp1.css"; // Ensure the CSS file is imported
+/*import "./admp1.css"; // Ensure the CSS file is imported*/
+import "./cadastrodecasos.css"; // Ensure the CSS file is imported
 
 const CadastroDeCasos = () => {
   const [isDarkMode, setIsDarkMode] = useState(() => {

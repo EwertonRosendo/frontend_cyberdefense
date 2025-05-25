@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./cadastro.css";
 import axios from "axios";
 
@@ -8,7 +8,14 @@ function Cadastro() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const apiUrl = import.meta.env.VITE_API_URL;
+  const apiUrl = import.meta.env.VITE_API_URL;  
+  const [loading, setLoading] = useState(true);
+  const [schools, setSchools] = useState([]);
+
+  const [school, setSchool] = useState([]);
+
+
+
   const handleCadastro = async (e) => {
     e.preventDefault();
 
@@ -24,10 +31,11 @@ function Cadastro() {
           user: {
             email: email,
             password: password,
+            school: school,
           },
         })
         .then(function (response) {
-          console.log(response.status);
+          
           if (response.status === 201) {
             navigate("/login");
           }
@@ -37,11 +45,45 @@ function Cadastro() {
         });
     } catch (error) {
       // Tratar erros da requisição
-      console.error("Erro ao cadastrar usuário:", error);
+      
       alert("Erro ao cadastrar usuário. Tente novamente.");
     }
   };
 
+    const get_schools = async () => {
+  try {
+      const response = await axios.get(`${apiUrl}/questions/schools`, {
+       
+      });
+      
+      setSchools(response.data || []);  // Garante array
+    } catch (error) {
+     
+    } finally {
+      setLoading(false);
+    }
+  };
+    useEffect(() => {
+      get_schools();
+      
+    }, []);
+  const renderSchools = (schools) => {
+    
+  if (!schools || schools.length === 0) {
+    return <p>Sem perguntas disponíveis.</p>;
+  }
+
+  return schools.map((school, index) => (
+    <option key={index} value={school} >
+      {capitalizeFirstLetter(school)}
+    </option>  
+  ));
+};
+
+  const capitalizeFirstLetter = (string) => {
+    if (!string) return '';
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
   return (
     <div>
       <header>
@@ -145,9 +187,24 @@ function Cadastro() {
               />
             </div>
 
-            <div className="remember-option" style={{ marginBottom: "20px" }}>
+            <div className="remember-option" style={{ marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
               <input type="checkbox" id="remember" />
               <label htmlFor="remember">Lembrar Senha?</label>
+
+              <select 
+                name="schools" 
+                id="schools" 
+                value={school}
+                onChange={(e) => setSchool(e.target.value)}
+              >
+                <option value={0} key={999}>Selecione a sua instituição</option>
+                {loading ? (
+                  <option disabled key={998}>Carregando instituições...</option>
+                ) : (
+                  renderSchools(schools)
+                )}
+              </select>
+
             </div>
 
             <button type="submit" className="login-button">
