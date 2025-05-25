@@ -21,10 +21,9 @@ function Denuncia() {
   const [instituicao, setInstituicao] = useState(true);
 
   const [respostas, setRespostas] = useState({});
-
-  const [respondido, setRespondido] = useState(false);
-
-
+  const [respostasdescrit, setRespostasdescrit] = useState({});
+  
+  
   const handleDenuncia = async (e) => {
     e.preventDefault();
 
@@ -45,7 +44,7 @@ function Denuncia() {
 
       if (response.status === 201) {
         navigate("/conclusao");
-        console.log(201);
+        
       }
     } catch (error) {
       console.error("Erro ao enviar denúncia:", error);
@@ -63,8 +62,41 @@ function Denuncia() {
         Authorization: `Bearer ${userToken}`,
       },
     });
-    console.log(response.data); 
+    
     setQuestions(response.data || []);  // Garante array
+  } catch (error) {
+    console.error('Erro ao buscar perguntas:', error);
+  } finally {
+    setLoading(false);
+  }
+};
+
+const get_resposta = async () => {
+  try {
+    const response = await axios.get(`${apiUrl}/user_answers/${userId}`, {
+      headers: {
+        Authorization: `Bearer ${userToken}`,
+      },
+    });
+    
+    setRespostas(response.data || []);  // Garante array
+  } catch (error) {
+    console.error('Erro ao buscar perguntas:', error);
+  } finally {
+    setLoading(false);
+  }
+};
+
+const get_respostasdescrit = async () => {
+  try {
+    const response = await axios.get(`${apiUrl}/case_by_user/${userId}`, {
+      headers: {
+        Authorization: `Bearer ${userToken}`,
+      },
+    });
+    
+    setRespostasdescrit(response.data || []);  // Garante array
+    console.log(response.data)
   } catch (error) {
     console.error('Erro ao buscar perguntas:', error);
   } finally {
@@ -74,8 +106,51 @@ function Denuncia() {
 
 // Executa a função quando o componente monta
 useEffect(() => {
+  get_respostasdescrit();
   get_questions();
+  get_resposta();
 }, []);
+
+// Função de renderização
+const renderImages = (imagens) => {
+  if (!imagens || imagens.length === 0) {
+    return <p>Sem imagens para exibir.</p>;
+  }
+  return imagens.map((image,index) => (
+    <img
+  src={image}
+  alt="Imagem de exemplo"
+  className="minha-classe"
+/>
+));
+};
+
+
+// Função de renderização
+const renderAnswers = (respostas) => {
+ 
+  if (!respostas || respostas.length === 0) {
+    return <p></p>;
+  }
+
+
+  return respostas.map((resposta, index) => (
+    <div className="case-description" id={`question-${resposta.id}`} key={resposta.id}>
+      <p className="questionstyle">{resposta.question.question}</p>        
+      <textarea
+        disabled
+       
+        placeholder="Sua resposta..."
+        rows="3"
+        style={{ width: '100%', marginTop: '8px' }}
+        value={resposta.answer}        
+      />
+    </div>
+  ));
+};
+
+
+
 
 // Função de renderização
 const renderQuestions = (questions) => {
@@ -91,8 +166,7 @@ const renderQuestions = (questions) => {
         name={`question-${question.id}`}
         placeholder="Sua resposta..."
         rows="3"
-        style={{ width: '100%', marginTop: '8px' }}
-        value={respostas[question.id] || ""}
+        style={{ width: '100%', marginTop: '8px' }}        
         onChange={(e) => {
           setRespostas({
             ...respostas,
@@ -121,7 +195,7 @@ const handleEnviarRespostas = async () => {
       }
     });
 
-    console.log("Respostas enviadas com sucesso:", response.data);
+    
     alert("Respostas enviadas com sucesso!");
   } catch (error) {
     console.error("Erro ao enviar respostas:", error);
@@ -210,6 +284,8 @@ const handleEnviarRespostas = async () => {
           </section>
 
           <section className="evidence-section">
+
+            
             <div className="evidence-container">
               <h2 className="evidence-title">Envie sua evidência</h2>
               <div className="upload-area">
@@ -241,30 +317,56 @@ const handleEnviarRespostas = async () => {
 
               <div className="case-description">
                 <label htmlFor="case-description">Descreva seu caso</label>
-                <textarea
-                  id="case-description"
-                  placeholder="Por favor, forneça um contexto sobre o seu caso..."
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                ></textarea>
+                  {
+                    respostasdescrit ? 
+                    <textarea
+                      id="case-description"
+                      value= {respostasdescrit.description}
+                      disabled                    
+                      
+                    ></textarea>:
+                    <textarea
+                      id="case-description"
+                      placeholder="Por favor, forneça um contexto sobre o seu caso..."
+                      value={description}
+                      onChange={(e) => setDescription(e.target.value)}
+                    ></textarea>
+                  }                
               </div>
                 <div>
+                  
                   <p className="schoolname">
                     {loading ? "Perguntas da sua instituição" : "Sua Instituição não possui perguntas extras"}
                   </p>
                 </div>
               <div>
-                {loading ? <p>Carregando perguntas...</p> : renderQuestions(questions)}
-              </div>
-      
-              <button
+                {renderImages(respostasdescrit.images)}
                 
-                onClick={handleDenuncia}
-                className="submit-case-button"
-                id="submit-case"
-              >
-                Enviar Caso
-              </button>
+                {loading ? <p> Carregando perguntas...</p> : (respostas ? renderAnswers(respostas.questions) : renderQuestions(questions))}
+                {/*loadin é true? carrega perguntas se não, temos respostas? renderiza se tiver e não renderiza perguntas */}
+                
+              </div>
+
+                {
+                  respostas ?<></>:
+                  <button
+                
+                    onClick={handleDenuncia}
+                    className="submit-case-button"
+                    id="submit-case"
+                  >
+                    Enviar Caso
+                  </button>
+                }
+                <button
+                
+                    onClick={handleDenuncia}
+                    className="submit-case-button"
+                    id="submit-case"
+                  >
+                    Enviar Caso
+                  </button>
+              
 
               <p className="data-security">
                 Seus dados são seguros e confidenciais.
