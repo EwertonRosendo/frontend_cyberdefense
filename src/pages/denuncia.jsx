@@ -20,6 +20,10 @@ function Denuncia() {
   const [loading, setLoading] = useState(true);
   const [instituicao, setInstituicao] = useState(true);
 
+  const [respostas, setRespostas] = useState({});
+
+  const [respondido, setRespondido] = useState(false);
+
 
   const handleDenuncia = async (e) => {
     e.preventDefault();
@@ -47,6 +51,7 @@ function Denuncia() {
       console.error("Erro ao enviar denúncia:", error);
       alert("Erro ao enviar denúncia. Tente novamente.");
     }
+    handleEnviarRespostas()
   };
 
     
@@ -79,19 +84,52 @@ const renderQuestions = (questions) => {
   }
 
   return questions.map((question, index) => (
-    <div className="case-description" id={`question-${question.id}`} key={question.id}>      
+    <div className="case-description" id={`question-${question.id}`} key={question.id}>
       <p className="questionstyle">{question.question}</p>
 
-      {/* Como não tem opções, coloque um campo para resposta */}
       <textarea
         name={`question-${question.id}`}
         placeholder="Sua resposta..."
         rows="3"
         style={{ width: '100%', marginTop: '8px' }}
+        value={respostas[question.id] || ""}
+        onChange={(e) => {
+          setRespostas({
+            ...respostas,
+            [question.id]: e.target.value
+          });
+        }}
       />
     </div>
   ));
 };
+
+const handleEnviarRespostas = async () => {
+  const school_answers = Object.entries(respostas).map(([question_id, answer]) => ({
+    user_id: userId,
+    question_id: Number(question_id),
+    answer
+  }));
+
+  try {
+    const response = await axios.post(`${apiUrl}/school_answers.json`, {
+      school_answers
+    }, {
+      headers: {
+        Authorization: `Bearer ${userToken}`,
+        'Content-Type': 'application/json'
+      }
+    });
+
+    console.log("Respostas enviadas com sucesso:", response.data);
+    alert("Respostas enviadas com sucesso!");
+  } catch (error) {
+    console.error("Erro ao enviar respostas:", error);
+    alert("Erro ao enviar respostas. Tente novamente.");
+  }
+};
+
+
   
 
 
@@ -188,6 +226,7 @@ const renderQuestions = (questions) => {
                   </label>
                 </div>
                 <input
+                  required
                   type="file"
                   id="file-upload"
                   className="file-upload"
@@ -219,6 +258,7 @@ const renderQuestions = (questions) => {
               </div>
       
               <button
+                
                 onClick={handleDenuncia}
                 className="submit-case-button"
                 id="submit-case"

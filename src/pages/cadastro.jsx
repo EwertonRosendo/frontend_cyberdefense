@@ -52,7 +52,7 @@ function Cadastro() {
 
     const get_schools = async () => {
   try {
-      const response = await axios.get(`${apiUrl}/questions/schools`, {
+      const response = await axios.get(`${apiUrl}/schools.json`, {
        
       });
       
@@ -74,8 +74,8 @@ function Cadastro() {
   }
 
   return schools.map((school, index) => (
-    <option key={index} value={school} >
-      {capitalizeFirstLetter(school)}
+    <option key={index} value={school.name} >
+      {capitalizeFirstLetter(school.name)}
     </option>  
   ));
 };
