@@ -99,6 +99,9 @@ const get_respostasdescrit = async () => {
         Authorization: `Bearer ${userToken}`,
       },
     });
+    if(response.status == 200){
+      setImages(response.data)
+    }
   } catch (error) {
     if (error.response) {
       console.error('Erro ao buscar perguntas:', error.response.status, error.response.data);
@@ -355,7 +358,7 @@ const handleEnviarRespostas = async () => {
               </div>
 
                 {
-                  respostas ?<></>:
+                  hasUserAnswerd ?<></>:
                   <button
                 
                     onClick={handleDenuncia}
@@ -364,17 +367,7 @@ const handleEnviarRespostas = async () => {
                   >
                     Enviar Caso
                   </button>
-                }
-                <button
-                
-                    onClick={handleDenuncia}
-                    className="submit-case-button"
-                    id="submit-case"
-                  >
-                    Enviar Caso
-                  </button>
-              
-
+                }          
               <p className="data-security">
                 Seus dados são seguros e confidenciais.
               </p>
