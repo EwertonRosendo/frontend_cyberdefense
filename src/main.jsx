@@ -13,6 +13,7 @@ import CadastroDeCasos from "./pages/CadastroDeCasos.jsx";
 import AdminPage from "./pages/AdminPage.jsx";
 import UserProfile from "./pages/UserProfile.jsx";
 import ProcessResult from "./pages/ProcessResult.jsx";
+import School from "./pages/School.jsx"
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,10 @@ const router = createBrowserRouter([
   {
     path: "processresult",
     element: <ProcessResult />,
+  },
+  {
+    path: "school",
+    element: <School />,
   },
 ]);
 
