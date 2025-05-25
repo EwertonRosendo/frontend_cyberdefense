@@ -21,7 +21,10 @@ function Denuncia() {
   const [instituicao, setInstituicao] = useState(true);
 
   const [respostas, setRespostas] = useState({});
-  const [respostasdescrit, setRespostasdescrit] = useState({});
+  const [images, setImages] = useState({});
+
+  const [hasUserAnswerd, setHasUserAnswerd] = useState(true);
+  const [schoolHasQuestions, setSchoolHasQuestions] = useState(true)
   
   
   const handleDenuncia = async (e) => {
@@ -71,16 +74,18 @@ function Denuncia() {
   }
 };
 
-const get_resposta = async () => {
+const get_respostas = async () => {
   try {
     const response = await axios.get(`${apiUrl}/user_answers/${userId}`, {
       headers: {
         Authorization: `Bearer ${userToken}`,
       },
     });
-    
-    setRespostas(response.data || []);  // Garante array
+    if (response.status == 200){
+      setRespostas(response.data || []);  // Garante array
+    }
   } catch (error) {
+
     console.error('Erro ao buscar perguntas:', error);
   } finally {
     setLoading(false);
@@ -94,21 +99,24 @@ const get_respostasdescrit = async () => {
         Authorization: `Bearer ${userToken}`,
       },
     });
-    
-    setRespostasdescrit(response.data || []);  // Garante array
-    console.log(response.data)
   } catch (error) {
-    console.error('Erro ao buscar perguntas:', error);
+    if (error.response) {
+      console.error('Erro ao buscar perguntas:', error.response.status, error.response.data);
+      setHasUserAnswerd(false)
+    } else {
+      console.error('Erro ao buscar perguntas:', error.message);
+    }
   } finally {
     setLoading(false);
   }
 };
 
+
 // Executa a função quando o componente monta
 useEffect(() => {
   get_respostasdescrit();
   get_questions();
-  get_resposta();
+  get_respostas();
 }, []);
 
 // Função de renderização das imagens enviadas
@@ -125,7 +133,7 @@ const renderImages = (imagens) => {
 ));
 };
 // Função de renderização das html de upload de imagem
-const renderHtml = (setFiles) => {
+const renderUploadImages = () => {
   return (
     <div className="upload-area">
       <div className="upload-instructions">
@@ -317,52 +325,14 @@ const handleEnviarRespostas = async () => {
             
             <div className="evidence-container">
               <h2 className="evidence-title">Envie sua evidência</h2>
-
-                
-
-                {respostasdescrit ? renderImages(respostasdescrit.images) : renderHtml(setFiles)}       
-
-                {/*loadin é true? carrega perguntas se não, temos respostas? renderiza se tiver e não renderiza perguntas */}
-                {/*renderHtml(setFiles)  esse renderiza o html de upload*/}
-
-                {/*renderImages(respostasdescrit.images)*/}
-
-              {/* esse aqui é o html da area
-              
-              <div className="upload-area">
-                <div className="upload-instructions">
-                  <p>
-                    Para fazer Upload da Evidência arraste e solte seus arquivos
-                    aqui ou clique para procurar.
-                  </p>
-                  <label htmlFor="file-upload" type="file"
-                  id="file-upload" className="select-files-button" multiple
-                  onChange={(e) => setFiles(Array.from(e.target.files))}
-                  accept=".png,.jpg,.jpeg,.pdf,.doc,.docx">
-                    Selecionar arquivos
-                  </label>
-                </div>
-                <input
-                  required
-                  type="file"
-                  id="file-upload"
-                  className="file-upload"
-                  multiple
-                  onChange={(e) => setFiles(Array.from(e.target.files))}
-                  accept=".png,.jpg,.jpeg,.pdf,.doc,.docx"
-                />
-                <p className="supported-formats">
-                  Formatos suportados: PNG, JPG, PDF, DOC
-                </p>
-              </div>*/}
-
+                {hasUserAnswerd ? renderImages(images.images) : renderUploadImages()}
               <div className="case-description">
                 <label htmlFor="case-description">Descreva seu caso</label>
                   {
-                    respostasdescrit ? 
+                    hasUserAnswerd ? 
                     <textarea
                       id="case-description"
-                      value= {respostasdescrit.description}
+                      value= {images.description}
                       disabled                    
                       
                     ></textarea>:
@@ -377,15 +347,11 @@ const handleEnviarRespostas = async () => {
                 <div>
                   
                   <p className="schoolname">
-                    {loading ? "Perguntas da sua instituição" : "Sua Instituição não possui perguntas extras"}
+                    {schoolHasQuestions ? "Perguntas da sua instituição" : "Sua Instituição não possui perguntas extras"}
                   </p>
                 </div>
               <div>
-                
-                
-                {loading ? <p> Carregando perguntas...</p> : (respostas ? renderAnswers(respostas.questions) : renderQuestions(questions))}
-                {/*loadin é true? carrega perguntas se não, temos respostas? renderiza se tiver e não renderiza perguntas */}
-                
+                {hasUserAnswerd ? renderAnswers(respostas.questions) : renderQuestions(questions)}
               </div>
 
                 {
