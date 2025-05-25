@@ -111,7 +111,7 @@ useEffect(() => {
   get_resposta();
 }, []);
 
-// Função de renderização
+// Função de renderização das imagens enviadas
 const renderImages = (imagens) => {
   if (!imagens || imagens.length === 0) {
     return <p>Sem imagens para exibir.</p>;
@@ -124,6 +124,35 @@ const renderImages = (imagens) => {
 />
 ));
 };
+// Função de renderização das html de upload de imagem
+const renderHtml = (setFiles) => {
+  return (
+    <div className="upload-area">
+      <div className="upload-instructions">
+        <p>
+          Para fazer Upload da Evidência arraste e solte seus arquivos
+          aqui ou clique para procurar.
+        </p>
+        <label htmlFor="file-upload" className="select-files-button">
+          Selecionar arquivos
+        </label>
+      </div>
+      <input
+        required
+        type="file"
+        id="file-upload"
+        className="file-upload"
+        multiple
+        onChange={(e) => setFiles(Array.from(e.target.files))}
+        accept=".png,.jpg,.jpeg,.pdf,.doc,.docx"
+      />
+      <p className="supported-formats">
+        Formatos suportados: PNG, JPG, PDF, DOC
+      </p>
+    </div>
+  );
+};
+
 
 
 // Função de renderização
@@ -288,6 +317,18 @@ const handleEnviarRespostas = async () => {
             
             <div className="evidence-container">
               <h2 className="evidence-title">Envie sua evidência</h2>
+
+                
+
+                {respostasdescrit ? renderImages(respostasdescrit.images) : renderHtml(setFiles)}       
+
+                {/*loadin é true? carrega perguntas se não, temos respostas? renderiza se tiver e não renderiza perguntas */}
+                {/*renderHtml(setFiles)  esse renderiza o html de upload*/}
+
+                {/*renderImages(respostasdescrit.images)*/}
+
+              {/* esse aqui é o html da area
+              
               <div className="upload-area">
                 <div className="upload-instructions">
                   <p>
@@ -313,7 +354,7 @@ const handleEnviarRespostas = async () => {
                 <p className="supported-formats">
                   Formatos suportados: PNG, JPG, PDF, DOC
                 </p>
-              </div>
+              </div>*/}
 
               <div className="case-description">
                 <label htmlFor="case-description">Descreva seu caso</label>
@@ -340,7 +381,7 @@ const handleEnviarRespostas = async () => {
                   </p>
                 </div>
               <div>
-                {renderImages(respostasdescrit.images)}
+                
                 
                 {loading ? <p> Carregando perguntas...</p> : (respostas ? renderAnswers(respostas.questions) : renderQuestions(questions))}
                 {/*loadin é true? carrega perguntas se não, temos respostas? renderiza se tiver e não renderiza perguntas */}
