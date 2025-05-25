@@ -167,6 +167,14 @@ main {
   padding: 24px;
 }
 
+.imagenusuario{
+  width: 150px;  /* ou qualquer tamanho que quiser, ex: 100px */
+  height: auto;  /* mantém a proporção original da imagem */
+  border-radius: 8px;  /* deixa a borda levemente arredondada, opcional */
+  object-fit: cover;  /* ajusta o conteúdo para cobrir o espaço, sem distorcer */
+  margin: 8px;  /* espaço entre as imagens, se tiver várias */ 
+}
+
 .evidence-title {
   font-size: 20px;
   color: var(--text-primary);

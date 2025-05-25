@@ -120,7 +120,7 @@ const renderImages = (imagens) => {
     <img
   src={image}
   alt="Imagem de exemplo"
-  className="minha-classe"
+  className="imagenusuario"
 />
 ));
 };
