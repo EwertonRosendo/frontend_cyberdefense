@@ -12,6 +12,9 @@ const School = () => {
   const [newText, setNewText] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
   const [newQuestion, setNewQuestion] = useState("");
+  const [users, setUsers] = useState([]);
+  const [userFilter, setUserFilter] = useState('');
+
 
   // Buscar perguntas
   useEffect(() => {
@@ -19,12 +22,19 @@ const School = () => {
       .get(`${apiUrl}/school_questions/${school}`)
       .then((res) => setQuestions(res.data))
       .catch((err) => console.error("Erro ao buscar perguntas:", err));
+    axios
+    .get(`${apiUrl}/users/school/${school}`)
+    .then((res) => setUsers(res.data))
+    .catch((err) => console.error("Erro ao buscar usuários:", err));
   }, []);
 
+  const filteredUsers = users.filter((user) =>
+    user.email.toLowerCase().includes(userFilter.toLowerCase())
+  );
   // Deletar pergunta
   const deleteQuestion = (id) => {
     axios
-      .delete(`/api/perguntas/${id}`)
+      .delete(`${apiUrl}/questions/${id}`)
       .then(() =>
         setQuestions((prev) => prev.filter((q) => q.id !== id))
       )
@@ -169,6 +179,7 @@ const School = () => {
                 <button
                   onClick={() => deleteQuestion(q.id)}
                   className="delete-button"
+                  type="submit"
                 >
                   Deletar
                 </button>
@@ -199,6 +210,70 @@ const School = () => {
         </div>
       )}
     </div>
+    <div className="users-section">
+  <h3>Usuários e Respostas</h3>
+
+  <input
+    type="text"
+    placeholder="Buscar por email..."
+    value={userFilter}
+    onChange={(e) => setUserFilter(e.target.value)}
+    className="user-search-input"
+  />
+
+  {filteredUsers.map((user) => (
+  <div key={user.id} className="user-card">
+    <p><strong>Email:</strong> {user.email}</p>
+    <p><strong>Tipo:</strong> {capitalizeFirstLetter(user.kind)}</p>
+
+    {/* Respostas às perguntas da escola */}
+    {user.school_answers && user.school_answers.length > 0 ? (
+      <ul className="answers-list">
+        {user.school_answers.map((answer) => (
+          <li key={answer.id} className="answer-item">
+            <p><strong>Pergunta:</strong> {answer.question.question}</p>
+            <p><strong>Resposta:</strong> {answer.answer}</p>
+            <p className="answer-date"><em>{new Date(answer.created_at).toLocaleString()}</em></p>
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p><em>Este usuário ainda não respondeu a nenhuma pergunta.</em></p>
+    )}
+
+    {/* Casos do usuário */}
+    {user.cases && user.cases.length > 0 ? (
+      <div className="cases-section">
+        <h4>Casos:</h4>
+        {user.cases.map((caso) => (
+          <div key={caso.id} className="case-item">
+            <p><strong>Descrição:</strong> {caso.description || <em>(sem descrição)</em>}</p>
+            <p className="case-date"><em>{new Date(caso.created_at).toLocaleString()}</em></p>
+
+            {/* Imagens do caso */}
+            {caso.images && caso.images.length > 0 ? (
+              <div className="case-images">
+                {caso.images.map((imgUrl, index) => (
+                  <img style={{width:200}} key={index} src={imgUrl} alt={`Imagem do caso ${caso.id}`} className="case-image" />
+                ))}
+              </div>
+            ) : (
+              <p><em>Sem imagens associadas.</em></p>
+            )}
+          </div>
+        ))}
+      </div>
+    ) : (
+      <p><em>Este usuário ainda não criou nenhum caso.</em></p>
+    )}
+  </div>
+))}
+
+
+  {filteredUsers.length === 0 && (
+    <p className="no-answers">Nenhum usuário encontrado com esse email.</p>
+  )}
+</div>
         </main>
 
         <footer className="site-footer">
