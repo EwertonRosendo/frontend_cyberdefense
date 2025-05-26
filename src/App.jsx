@@ -6,7 +6,7 @@ function App() {
   const navigate = useNavigate();
 
   return (
-    <body>
+    <div>
       <header className="site-header">
         <div className="header-container">
           <div className="header-content">
@@ -235,7 +235,7 @@ function App() {
           </div>
         </div>
       </footer>
-    </body>
+    </div>
   );
 }
 
