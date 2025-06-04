@@ -57,8 +57,17 @@
   stroke: #1f2937;
 }
 
-/* ========== MAIN CONTENT ========== */
 
+
+/* ========== MAIN CONTENT ========== */
+.conclusao-main{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 24px;
+}
 
 /* Case Status Section */
 .conclusao-case-status-section {

@@ -84,7 +84,7 @@ function Conclusao() {
           </div>
         </header>
 
-        <main>
+        <div className="conclusao-main">
           <section className="conclusao-case-status-section">
             <div className="conclusao-case-status-container">
               <h2 className="conclusao-case-status-title">Case Status</h2>
@@ -141,7 +141,7 @@ function Conclusao() {
               </div>
             </div>
           </section>
-        </main>
+        </div>
 
         <footer className="conclusao-site-footer">
           <div className="conclusao-footer-container">
