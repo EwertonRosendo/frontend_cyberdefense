@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
 import axios from "axios";
 import "./School.css";
 
 const School = () => {
+  const navigate = useNavigate();
   const apiUrl = import.meta.env.VITE_API_URL;
   const school = Cookies.get("userSchool");
 
@@ -287,34 +289,77 @@ const School = () => {
           </div>
         </main>
 
-        <footer className="site-footer">
-          <div className="footer-container">
-            <div className="footer-content">
-              <nav className="footer-nav">
-                <a href="#" className="footer-link">
-                  Termos de Uso
-                </a>
-                <a href="#" className="footer-link">
-                  Política de Privacidade
-                </a>
-                <a href="#" className="footer-link">
-                  Contato
-                </a>
-                <a href="#" className="footer-link">
-                  Ajuda
-                </a>
-              </nav>
-              <button className="report-button">
-                <span>Reportar problema</span>
-                <img
-                  src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
-                  alt="Report icon"
-                  className="report-icon"
-                />
-              </button>
+        <div className="App-site-footer">
+        <div className="App-footer-container">
+          <div className="App-footer-content">
+            <div className="App-footer-column">
+              <h3 className="App-footer-title">CyberDefense</h3>
+              <p className="App-footer-description">
+                Apoiando a defesa justa contra acusações de bullying.
+              </p>
+            </div>
+
+            <div className="App-footer-column">
+              <h3 className="App-footer-title">Links Rapidos</h3>
+              <ul className="App-footer-links">
+                <li>
+                  <a href="#" onClick={() => navigate("/")}>tela de inicio</a>
+                </li>
+                <li>
+                  <a href="#">Enviar Evidência</a>
+                </li>
+                <li>
+                  <a href="#">analisar</a>
+                </li>
+                <li>
+                  <a href="#">Contato</a>
+                </li>
+              </ul>
+            </div>
+
+            <div className="App-footer-column">
+              <h3 className="App-footer-title">Legal</h3>
+              <ul className="App-footer-links">
+                <li>
+                  <a href="#">Política de Privacidade</a>
+                </li>
+                <li>
+                  <a href="#">Termos de Uso</a>
+                </li>
+                <li>
+                  <a href="#">Política de Cookies</a>
+                </li>
+              </ul>
+            </div>
+
+            <div className="App-footer-column">
+              <h3 className="App-footer-title">Contato</h3>
+              <ul className="App-footer-contact">
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
+                    alt="Email icon"
+                    className="App-contact-icon"
+                  />
+                  <span>Email: support&#64;cyberdefense.com</span>
+                </li>
+                <li>
+                  <img
+                    src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
+                    alt="Phone icon"
+                    className="App-contact-icon"
+                  />
+                  <span>Telefone: +81 (55) 123-4567</span>
+                </li>
+              </ul>
             </div>
           </div>
-        </footer>
+
+          <div className="App-copyright">
+            <p>© 2025 CyberDefense. Todos os direitos reservados.</p>
+          </div>
+        </div>
+      </div>
       </div>
     </div>
   );
