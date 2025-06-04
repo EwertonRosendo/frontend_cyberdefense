@@ -3,10 +3,9 @@ import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./pages/Home.jsx";
-import Login from "./pages/Login.jsx";
 import Denuncia from "./pages/denuncia.jsx";
 import Conclusao from "./pages/conclusao.jsx";
+import Login from "./pages/Login.jsx";
 import Analise from "./pages/analise.jsx";
 import Cadastro from "./pages/cadastro.jsx";
 import CadastroDeCasos from "./pages/CadastroDeCasos.jsx";
@@ -14,6 +13,7 @@ import AdminPage from "./pages/AdminPage.jsx";
 import UserProfile from "./pages/UserProfile.jsx";
 import ProcessResult from "./pages/ProcessResult.jsx";
 import School from "./pages/School.jsx"
+import Home from "./pages/Home.jsx";
 
 const router = createBrowserRouter([
   {
