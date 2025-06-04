@@ -15,7 +15,7 @@
 }
 
 body {
-  background-color:  black;
+  background-color: var(--bg-body);
 }
 
 .container {
@@ -29,8 +29,8 @@ body {
 header {
   width: 100%;
   height: 61px;
-  background-color:  black;
-  border-bottom: 1px solid black;
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--border-color);
   display: flex;
   justify-content: center;
 }
@@ -58,30 +58,30 @@ header {
 .portal-name {
   font-size: 20px;
   line-height: 20px;
-  color: black;
+  color: var(--text-primary);
 }
 
 /* ========== BOTÃO DE TEMA ========== */
 .theme-toggle {
   background: transparent;
-  border: 1px solid black;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 8px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: black;
+  color: var(--text-primary);
 }
 
 .theme-toggle:hover {
-  background-color:  black;
+  background-color: var(--bg-body);
 }
 
 .theme-toggle svg {
   width: 20px;
   height: 20px;
-  stroke: black;
+  stroke: var(--text-primary);
 }
 
 /* ========== MAIN CONTENT ========== */
@@ -98,15 +98,15 @@ main {
 .case-status-section {
   width: 100%;
   max-width: 1248px;
-  background-color:  black;
-  border: 1px solid black;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 24px;
 }
 
 .case-status-title {
   font-size: 20px;
-  color: black;
+  color: var(--text-primary);
   margin-bottom: 24px;
 }
 
@@ -127,8 +127,8 @@ main {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: black;
-  border: 2px solid black;
+  background-color: var(--bg-secondary);
+  border: 2px solid var(--border-color);
 }
 
 .status-icon.completed {
@@ -138,13 +138,13 @@ main {
 
 .status-text {
   font-size: 14px;
-  color:black;
+  color: var(--text-secondary);
 }
 
 .status-bar {
   flex: 1;
   height: 4px;
-  background-color: black;
+  background-color: var(--border-color);
   position: relative;
 }
 
@@ -177,12 +177,12 @@ main {
 
 .evidence-title {
   font-size: 20px;
-  color: black;
+  color: var(--text-primary);
   margin-bottom: 24px;
 }
 
 .upload-area {
-  border: 2px dashed  black;
+  border: 2px dashed var(--button-primary);
   border-radius: 8px;
   padding: 32px;
   text-align: center;
@@ -190,12 +190,12 @@ main {
 }
 
 .upload-instructions {
-  color:black;
+  color: var(--text-secondary);
   margin-bottom: 16px;
 }
 
 .select-files-button {
-  background-color:  black;
+  background-color: var(--button-primary);
   color: white;
   border: none;
   border-radius: 8px;
@@ -205,12 +205,12 @@ main {
 }
 
 .select-files-button:hover {
-  background-color:  black;
+  background-color: var(--button-hover);
 }
 
 .supported-formats {
   font-size: 14px;
-  color:black;
+  color: var(--text-secondary);
 }
 
 .case-description {
@@ -220,7 +220,7 @@ main {
 .case-description label {
   display: block;
   font-size: 14px;
-  color:  black;
+  color: var(--text-tertiary);
   margin-bottom: 8px;
 }
 
@@ -231,13 +231,13 @@ main {
   border: 1px #d1d5db;
   border-radius: 8px;
   background-color: #ffffff;
-  color:  black;
+  color: var(--input-text);
   resize: vertical;
 }
 
 .data-security {
   font-size: 14px;
-  color:black;
+  color: var(--text-secondary);
 }
 
 /* Review Process Section */
@@ -245,7 +245,7 @@ main {
   width: 100%;
   max-width: 1248px;
   background-color: #ffffff;
-  border: 1px solid black;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 24px;
 }
@@ -254,24 +254,24 @@ main {
   display: flex;
   gap: 24px;
   margin-bottom: 24px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .nav-button {
   background: none;
   border: none;
   padding: 12px 0;
-  color:black;
+  color: var(--text-secondary);
   cursor: pointer;
   position: relative;
 }
 
 .nav-button.active {
-  color:  black;
+  color: var(--button-primary);
 }
 /* Submit Case Button Styles */
 .submit-case-button {
-  background-color:  black;
+  background-color: var(--button-primary);
   color: white;
   border: none;
   border-radius: 8px;
@@ -283,7 +283,7 @@ main {
 }
 
 .submit-case-button:hover {
-  background-color:  black;
+  background-color: var(--button-hover);
 }
 .nav-button.active::after {
   content: "";
@@ -292,25 +292,25 @@ main {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color:  black;
+  background-color: var(--button-primary);
 }
 
 .review-process-title {
   font-size: 20px;
-  color: black;
+  color: var(--text-primary);
   margin-bottom: 16px;
 }
 
 .review-process-description {
-  color:black;
+  color: var(--text-secondary);
   line-height: 1.5;
 }
 
 /* ========== FOOTER ========== */
 .site-footer {
   width: 100%;
-  background-color: #ffffff;
-  border-top: 1px solid black;
+  background-color: var(#ffffff);
+  border-top: 1px solid var(--border-color);
   padding: 24px 0;
 }
 
@@ -333,7 +333,7 @@ main {
 }
 
 .footer-link {
-  color:black;
+  color: var(--text-secondary);
   text-decoration: none;
   font-size: 14px;
 }
@@ -344,7 +344,7 @@ main {
   gap: 8px;
   background: none;
   border: none;
-  color:black;
+  color: var(--text-secondary);
   cursor: pointer;
   font-size: 14px;
 }

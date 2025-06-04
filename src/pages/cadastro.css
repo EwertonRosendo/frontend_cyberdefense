@@ -15,7 +15,7 @@
 }
 
 body {
-  background-color:  black;
+  background-color: var(--bg-body);
   min-height: 100vh;
 }
 
@@ -30,8 +30,8 @@ body {
 header {
   width: 100%;
   height: 61px;
-  background-color:  black;
-  border-bottom: 1px solid black;
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--border-color);
   display: flex;
   justify-content: center;
 }
@@ -57,7 +57,7 @@ header {
 }
 
 .portal-name {
-  color: black;
+  color: var(--text-primary);
   font-size: 20px;
   line-height: 20px;
 }
@@ -65,25 +65,25 @@ header {
 /* Estilos do botão de tema */
 .theme-toggle {
   background: transparent;
-  border: 1px solid black;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 8px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: black;
+  color: var(--text-primary);
   margin-left: 16px;
 }
 
 .theme-toggle:hover {
-  background-color:  black;
+  background-color: var(--bg-body);
 }
 
 .theme-toggle svg {
   width: 20px;
   height: 20px;
-  stroke: black;
+  stroke: var(--text-primary);
 }
 
 /* ========== ESTILOS DO CONTEÚDO PRINCIPAL ========== */
@@ -98,9 +98,9 @@ main {
 .login-card {
   width: 448px;
   padding: 32px;
-  background-color:  black;
+  background-color: var(--bg-white);
   border-radius: 8px;
-  box-shadow:  black;
+  box-shadow: var(--card-shadow);
   display: flex;
   flex-direction: column;
   gap: 32px;
@@ -115,14 +115,14 @@ main {
   font-size: 24px;
   line-height: 24px;
   font-weight: 400;
-  color:  black;
+  color: var(--button-primary);
   margin-bottom: 16px;
 }
 
 .login-subtitle {
   font-size: 16px;
   line-height: 16px;
-  color:black;
+  color: var(--text-secondary);
   margin-bottom: 8px;
 }
 
@@ -142,22 +142,22 @@ main {
 .form-group label {
   font-size: 14px;
   line-height: 17px;
-  color:  black;
+  color: var(--text-tertiary);
 }
 
 .form-group input {
   height: 42px;
   padding: 0 12px;
-  border: 1px solid  black;
+  border: 1px solid var(--input-border);
   border-radius: 6px;
   font-size: 16px;
   line-height: 24px;
-  color:  black;
-  background-color:  black;
+  color: var(--input-text);
+  background-color: var(--bg-white);
 }
 
 .form-group input::placeholder {
-  color:  black;
+  color: var(--input-placeholder);
 }
 
 .form-options {
@@ -176,20 +176,20 @@ main {
 .remember-option input[type="checkbox"] {
   width: 16px;
   height: 16px;
-  border: 1px solid  black;
+  border: 1px solid var(--input-border);
   border-radius: 1px;
 }
 
 .remember-option label {
   font-size: 14px;
   line-height: 17px;
-  color:black;
+  color: var(--text-secondary);
 }
 
 .forgot-password {
   font-size: 14px;
   line-height: 14px;
-  color:black;
+  color: var(--text-secondary);
   text-decoration: none;
 }
 
@@ -217,13 +217,13 @@ main {
 .signup-text {
   font-size: 12px;
   line-height: 14px;
-  color:black;
+  color: var(--text-secondary);
 }
 
 .signup-action {
   font-size: 12px;
   line-height: 14px;
-  color:  black;
+  color: var(--link-color);
   text-decoration: none;
 }
 
@@ -236,7 +236,7 @@ main {
 .terms-text {
   font-size: 14px;
   line-height: 14px;
-  color:black;
+  color: var(--text-secondary);
   margin-bottom: 14px;
 }
 
@@ -249,22 +249,22 @@ main {
 .terms-link {
   font-size: 14px;
   line-height: 14px;
-  color: black;
+  color: var(--text-primary);
   text-decoration: none;
 }
 
 .terms-separator {
   font-size: 14px;
   line-height: 14px;
-  color:black;
+  color: var(--text-secondary);
 }
 
 /* ========== ESTILOS DO RODAPÉ ========== */
 footer {
   width: 100%;
   height: 53px;
-  background-color:  black;
-  border-top: 1px solid black;
+  background-color: var(--bg-white);
+  border-top: 1px solid var(--border-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -281,7 +281,7 @@ footer {
 .copyright {
   font-size: 14px;
   line-height: 14px;
-  color:black;
+  color: var(--text-secondary);
 }
 
 /* ========== ESTILOS RESPONSIVOS ========== */
