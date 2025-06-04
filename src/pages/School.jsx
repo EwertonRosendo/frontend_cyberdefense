@@ -13,8 +13,7 @@ const School = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [newQuestion, setNewQuestion] = useState("");
   const [users, setUsers] = useState([]);
-  const [userFilter, setUserFilter] = useState('');
-
+  const [userFilter, setUserFilter] = useState("");
 
   // Buscar perguntas
   useEffect(() => {
@@ -23,9 +22,9 @@ const School = () => {
       .then((res) => setQuestions(res.data))
       .catch((err) => console.error("Erro ao buscar perguntas:", err));
     axios
-    .get(`${apiUrl}/users/school/${school}`)
-    .then((res) => setUsers(res.data))
-    .catch((err) => console.error("Erro ao buscar usuários:", err));
+      .get(`${apiUrl}/users/school/${school}`)
+      .then((res) => setUsers(res.data))
+      .catch((err) => console.error("Erro ao buscar usuários:", err));
   }, []);
 
   const filteredUsers = users.filter((user) =>
@@ -35,9 +34,7 @@ const School = () => {
   const deleteQuestion = (id) => {
     axios
       .delete(`${apiUrl}/questions/${id}`)
-      .then(() =>
-        setQuestions((prev) => prev.filter((q) => q.id !== id))
-      )
+      .then(() => setQuestions((prev) => prev.filter((q) => q.id !== id)))
       .catch((err) => console.error("Erro ao deletar pergunta:", err));
   };
 
@@ -47,10 +44,10 @@ const School = () => {
 
     axios
       .post(`${apiUrl}/questions.json`, {
-        question:{
-        question: newQuestion,
-        school: school
-    }
+        question: {
+          question: newQuestion,
+          school: school,
+        },
       })
       .then((res) => {
         setQuestions((prev) => [res.data, ...prev]);
@@ -89,8 +86,8 @@ const School = () => {
     setNewText("");
   };
 
-    const capitalizeFirstLetter = (string) => {
-    if (!string) return '';
+  const capitalizeFirstLetter = (string) => {
+    if (!string) return "";
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
   return (
@@ -106,174 +103,188 @@ const School = () => {
               />
               <span className="portal-name">CyberDefense</span>
             </div>
-
-            <button
-              className="theme-toggle"
-              id="theme-toggle"
-              aria-label="Alternar tema"
-            >
-              <svg
-                className="sun-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-                />
-              </svg>
-              <svg
-                className="moon-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                style={{ display: "none" }}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-                />
-              </svg>
-            </button>
           </div>
         </header>
 
         <main>
-           <div lang="pt-BR" style={{width:"100%"}}>
-      <main className="school-container">
-        <h3 className="school-title">{capitalizeFirstLetter(school)}</h3>
+          <div lang="pt-BR" style={{ width: "100%" }}>
+            <main className="school-container">
+              <div className="school-top">
+                <h3 className="school-title">
+                  {capitalizeFirstLetter(school)}
+                </h3>
+                <div className="form-container">
+                  <h2 className="form-title">Adicionar nova pergunta</h2>
+                  <textarea
+                    value={newQuestion}
+                    onChange={(e) => setNewQuestion(e.target.value)}
+                    placeholder="Digite sua pergunta..."
+                    className="question-textarea"
+                  />
+                  <button onClick={createQuestion} className="submit-button">
+                    Enviar
+                  </button>
+                </div>
+              </div>
 
-        <div className="form-container">
-          <h2 className="form-title">Adicionar nova pergunta</h2>
-          <textarea
-            value={newQuestion}
-            onChange={(e) => setNewQuestion(e.target.value)}
-            placeholder="Digite sua pergunta..."
-            className="question-textarea"
-          />
-          <button onClick={createQuestion} className="submit-button">
-            Enviar
-          </button>
-        </div>
-        <div className="school-header">
-            <h3>Perguntas da sua instituição:</h3>
-        </div>
-        <div className="questions-list">
-          {questions.map((q) => (
-            <div key={q.id} className="question-card">
-              <p>{q.question}</p>
-              <div className="actions">
-                <button
-                  onClick={() => openModal(q)}
-                  className="update-button"
-                >
-                  Atualizar
-                </button>
-                <button
-                  onClick={() => deleteQuestion(q.id)}
-                  className="delete-button"
-                  type="submit"
-                >
-                  Deletar
-                </button>
+              <div className="question-and-answers"></div>
+            </main>
+
+            <div className="questions-and-answers">
+              {/*aqui é onde temos a coluna da direita*/}
+              <div className="questions">
+                <div className="school-header" style={{paddingLeft:"50px", paddingBottom:"20px"}}>
+                  <h3>Perguntas da sua instituição:</h3>
+                </div>
+                <div className="questions-list">
+                  {questions.map((q) => (
+                    <div key={q.id} className="question-card">
+                      <p>{q.question}</p>
+                      <div className="actions">
+                        <button
+                          onClick={() => openModal(q)}
+                          className="update-button"
+                        >
+                          Atualizar
+                        </button>
+                        <button
+                          onClick={() => deleteQuestion(q.id)}
+                          className="delete-button"
+                          type="submit"
+                        >
+                          Deletar
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="answers">
+                <div className="school-header" style={{paddingLeft:"50px", paddingBottom:"20px"}}>
+                  <h3>Perguntas da sua instituição:</h3>
+                </div>
+                <div className="users-section">
+                  <input
+                    type="text"
+                    placeholder="Buscar por email..."
+                    value={userFilter}
+                    onChange={(e) => setUserFilter(e.target.value)}
+                    className="user-search-input"
+                  />
+
+                  {filteredUsers.map((user) => (
+                    <div key={user.id} className="user-card">
+                      <p>
+                        <strong>Email:</strong> {user.email}
+                      </p>
+                      <p>
+                        <strong>Tipo:</strong>{" "}
+                        {capitalizeFirstLetter(user.kind)}
+                      </p>
+
+                      {/* Respostas às perguntas da escola */}
+                      {user.school_answers && user.school_answers.length > 0 ? (
+                        <ul className="answers-list">
+                          {user.school_answers.map((answer) => (
+                            <li key={answer.id} className="answer-item">
+                              <p>
+                                <strong>Pergunta:</strong>{" "}
+                                {answer.question.question}
+                              </p>
+                              <p>
+                                <strong>Resposta:</strong> {answer.answer}
+                              </p>
+                              <p className="answer-date">
+                                <em>
+                                  {new Date(answer.created_at).toLocaleString()}
+                                </em>
+                              </p>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p>
+                          <em>
+                            Este usuário ainda não respondeu a nenhuma pergunta.
+                          </em>
+                        </p>
+                      )}
+
+                      {/* Casos do usuário */}
+                      {user.cases && user.cases.length > 0 ? (
+                        <div className="cases-section">
+                          <h4>Casos:</h4>
+                          {user.cases.map((caso) => (
+                            <div key={caso.id} className="case-item">
+                              <p>
+                                <strong>Descrição:</strong>{" "}
+                                {caso.description || <em>(sem descrição)</em>}
+                              </p>
+                              <p className="case-date">
+                                <em>
+                                  {new Date(caso.created_at).toLocaleString()}
+                                </em>
+                              </p>
+
+                              {/* Imagens do caso */}
+                              {caso.images && caso.images.length > 0 ? (
+                                <div className="case-images">
+                                  {caso.images.map((imgUrl, index) => (
+                                    <img
+                                      style={{ width: 200 }}
+                                      key={index}
+                                      src={imgUrl}
+                                      alt={`Imagem do caso ${caso.id}`}
+                                      className="case-image"
+                                    />
+                                  ))}
+                                </div>
+                              ) : (
+                                <p>
+                                  <em>Sem imagens associadas.</em>
+                                </p>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <p>
+                          <em>Este usuário ainda não criou nenhum caso.</em>
+                        </p>
+                      )}
+                    </div>
+                  ))}
+
+                  {filteredUsers.length === 0 && (
+                    <p className="no-answers">
+                      Nenhum usuário encontrado com esse email.
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
-          ))}
-        </div>
-      </main>
 
-      {modalOpen && (
-        <div className="modal-overlay">
-          <div className="modal-content">
-            <h2 className="modal-title">Editar Pergunta</h2>
-            <textarea
-              value={newText}
-              onChange={(e) => setNewText(e.target.value)}
-              className="modal-textarea"
-            />
-            <div className="modal-actions">
-              <button onClick={closeModal} className="cancel-button">
-                Cancelar
-              </button>
-              <button onClick={updateQuestion} className="save-button">
-                Salvar
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-    <div className="users-section">
-  <h3>Usuários e Respostas</h3>
-
-  <input
-    type="text"
-    placeholder="Buscar por email..."
-    value={userFilter}
-    onChange={(e) => setUserFilter(e.target.value)}
-    className="user-search-input"
-  />
-
-  {filteredUsers.map((user) => (
-  <div key={user.id} className="user-card">
-    <p><strong>Email:</strong> {user.email}</p>
-    <p><strong>Tipo:</strong> {capitalizeFirstLetter(user.kind)}</p>
-
-    {/* Respostas às perguntas da escola */}
-    {user.school_answers && user.school_answers.length > 0 ? (
-      <ul className="answers-list">
-        {user.school_answers.map((answer) => (
-          <li key={answer.id} className="answer-item">
-            <p><strong>Pergunta:</strong> {answer.question.question}</p>
-            <p><strong>Resposta:</strong> {answer.answer}</p>
-            <p className="answer-date"><em>{new Date(answer.created_at).toLocaleString()}</em></p>
-          </li>
-        ))}
-      </ul>
-    ) : (
-      <p><em>Este usuário ainda não respondeu a nenhuma pergunta.</em></p>
-    )}
-
-    {/* Casos do usuário */}
-    {user.cases && user.cases.length > 0 ? (
-      <div className="cases-section">
-        <h4>Casos:</h4>
-        {user.cases.map((caso) => (
-          <div key={caso.id} className="case-item">
-            <p><strong>Descrição:</strong> {caso.description || <em>(sem descrição)</em>}</p>
-            <p className="case-date"><em>{new Date(caso.created_at).toLocaleString()}</em></p>
-
-            {/* Imagens do caso */}
-            {caso.images && caso.images.length > 0 ? (
-              <div className="case-images">
-                {caso.images.map((imgUrl, index) => (
-                  <img style={{width:200}} key={index} src={imgUrl} alt={`Imagem do caso ${caso.id}`} className="case-image" />
-                ))}
+            {modalOpen && (
+              <div className="modal-overlay">
+                <div className="modal-content">
+                  <h2 className="modal-title">Editar Pergunta</h2>
+                  <textarea
+                    value={newText}
+                    onChange={(e) => setNewText(e.target.value)}
+                    className="modal-textarea"
+                  />
+                  <div className="modal-actions">
+                    <button onClick={closeModal} className="cancel-button">
+                      Cancelar
+                    </button>
+                    <button onClick={updateQuestion} className="save-button">
+                      Salvar
+                    </button>
+                  </div>
+                </div>
               </div>
-            ) : (
-              <p><em>Sem imagens associadas.</em></p>
             )}
           </div>
-        ))}
-      </div>
-    ) : (
-      <p><em>Este usuário ainda não criou nenhum caso.</em></p>
-    )}
-  </div>
-))}
-
-
-  {filteredUsers.length === 0 && (
-    <p className="no-answers">Nenhum usuário encontrado com esse email.</p>
-  )}
-</div>
         </main>
 
         <footer className="site-footer">
