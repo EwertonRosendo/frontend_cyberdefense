@@ -8,8 +8,8 @@
 }
 
 body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: black;
+  color: black;
   min-height: 100vh;
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -18,8 +18,8 @@ body {
 .site-header {
   width: 100%;
   height: 65px;
-  background-color: var(--bg-primary);
-  border-bottom: 1px solid var(--border-color);
+  background-color: black;
+  border-bottom: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,7 +31,7 @@ body {
 .header-container {
   width: 1280px;
   height: 64px;
-  background-color: var(--bg-primary);
+  background-color: black;
   display: flex;
   justify-content: center;
 }
@@ -39,7 +39,7 @@ body {
 .header-content {
   width: 1248px;
   height: 64px;
-  background-color: var(--bg-primary);
+  background-color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -47,28 +47,28 @@ body {
 }
 
 .logo {
-  background-color: var(--bg-primary);
+  background-color: black;
 }
 
 .logo a {
   font-size: 20px;
   line-height: 20px;
   font-weight: 400;
-  color: var(--text-primary);
+  color: black;
   text-decoration: none;
 }
 
 .main-nav {
   display: flex;
   gap: 24px;
-  background-color: var(--bg-primary);
+  background-color: black;
 }
 
 .main-nav a {
   font-size: 16px;
   line-height: 16px;
   font-weight: 400;
-  color: var(--text-primary);
+  color: black;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -85,7 +85,7 @@ body {
 .login-button {
   background-color: transparent;
   border: none;
-  color: var(--text-primary);
+  color: black;
   font-size: 16px;
   line-height: 19px;
   cursor: pointer;
@@ -100,7 +100,7 @@ body {
   background-color: #1d4ed8;
   border: none;
   border-radius: 8px;
-  color: var(--text-primary);
+  color: black;
   font-size: 16px;
   line-height: 19px;
   padding: 10px 16px;
@@ -115,8 +115,8 @@ body {
 .main-frame {
   width: 100%;
   min-height: 100vh;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: black;
+  color: black;
   font-family: "Inter", sans-serif;
 }
 
@@ -134,7 +134,7 @@ body {
 }
 
 .hero-section {
-  background-color: var(--bg-secondary);
+  background-color: black;
   padding: 80px 0;
 }
 
@@ -152,7 +152,7 @@ body {
   font-size: 48px;
   line-height: 48px;
   font-weight: 400;
-  color: var(--text-primary);
+  color: black;
   margin-bottom: 20px;
   text-align: center;
   max-width: 732px;
@@ -161,7 +161,7 @@ body {
 .hero-subtitle {
   font-size: 20px;
   line-height: 20px;
-  color: var(--text-secondary);
+  color:black;
   margin-bottom: 40px;
   text-align: center;
   max-width: 744px;
@@ -187,7 +187,7 @@ body {
 }
 
 .features-section {
-  background-color: var(--bg-primary);
+  background-color: black;
   padding: 60px 0;
 }
 
@@ -200,7 +200,7 @@ body {
 }
 
 .feature-card {
-  background-color: var(--card-bg);
+  background-color: black;
   border-radius: 8px;
   padding: 24px;
   width: 395px;
@@ -229,7 +229,7 @@ body {
   top: 60px;
   font-size: 20px;
   line-height: 24px;
-  color: var(--text-primary);
+  color: black;
   font-weight: 400;
 }
 
@@ -239,12 +239,12 @@ body {
   top: 100px;
   font-size: 16px;
   line-height: 19px;
-  color: var(--text-secondary);
+  color:black;
   max-width: 347px;
 }
 
 .how-it-works-section {
-  background-color: var(--bg-secondary);
+  background-color: black;
   padding: 60px 0;
 }
 
@@ -307,12 +307,12 @@ body {
 .step-description {
   font-size: 16px;
   line-height: 22px;
-  color: var(--text-secondary);
+  color:black;
   font-weight: 400;
 }
 
 .cta-section {
-  background-color: var(--bg-primary);
+  background-color: black;
   padding: 60px 0;
 }
 
@@ -325,7 +325,7 @@ body {
 .section-subtitle {
   font-size: 20px;
   line-height: 28px;
-  color: var(--text-secondary);
+  color:black;
   margin-bottom: 40px;
   text-align: center;
 }
@@ -374,7 +374,7 @@ body {
 }
 
 .site-footer {
-  background-color: var(--footer-bg);
+  background-color: black;
   width: 100%;
   padding: 40px 0 0 0;
   font-family: "Inter", sans-serif;
@@ -401,7 +401,7 @@ body {
 }
 
 .footer-title {
-  color: var(--footer-text);
+  color:  black;
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
@@ -409,7 +409,7 @@ body {
 }
 
 .footer-description {
-  color: var(--text-tertiary);
+  color:  black;
   font-size: 16px;
   line-height: 22px;
   font-weight: 400;
@@ -426,7 +426,7 @@ body {
 }
 
 .footer-links a {
-  color: var(--text-tertiary);
+  color:  black;
   text-decoration: none;
   font-size: 16px;
   line-height: 22px;
@@ -434,7 +434,7 @@ body {
 }
 
 .footer-links a:hover {
-  color: var(--footer-text);
+  color:  black;
 }
 
 .footer-contact {
@@ -447,7 +447,7 @@ body {
   display: flex;
   align-items: center;
   margin-bottom: 12px;
-  color: var(--text-tertiary);
+  color:  black;
   font-size: 16px;
   line-height: 22px;
 }
@@ -461,12 +461,12 @@ body {
 .copyright {
   text-align: center;
   padding: 20px 0;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid black;
   margin-top: 20px;
 }
 
 .copyright p {
-  color: var(--text-tertiary);
+  color:  black;
   font-size: 16px;
   line-height: 22px;
   font-weight: 400;
@@ -476,122 +476,122 @@ body {
 
 /* Aplicação das variáveis nos elementos */
 body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: black;
+  color: black;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .site-header {
-  background-color: var(--bg-primary);
-  border-bottom: 1px solid var(--border-color);
+  background-color: black;
+  border-bottom: 1px solid black;
 }
 
 .header-container,
 .header-content,
 .logo,
 .main-nav {
-  background-color: var(--bg-primary);
+  background-color: black;
 }
 
 .logo a,
 .main-nav a,
 .login-button {
-  color: var(--text-primary);
+  color: black;
 }
 
 .main-frame {
-  background-color: var(--bg-primary);
+  background-color: black;
 }
 
 .hero-section {
-  background-color: var(--bg-secondary);
+  background-color: black;
 }
 
 .hero-title {
-  color: var(--text-primary);
+  color: black;
 }
 
 .hero-subtitle {
-  color: var(--text-secondary);
+  color:black;
 }
 
 .features-section {
-  background-color: var(--bg-primary);
+  background-color: black;
 }
 
 .feature-card {
-  background-color: var(--card-bg);
+  background-color: black;
 }
 
 .feature-title {
-  color: var(--text-primary);
+  color: black;
 }
 
 .feature-description {
-  color: var(--text-secondary);
+  color:black;
 }
 
 .how-it-works-section {
-  background-color: var(--bg-secondary);
+  background-color: black;
 }
 
 .section-title {
-  color: var(--text-primary);
+  color: black;
 }
 
 .step-title {
-  color: var(--text-primary);
+  color: black;
 }
 
 .step-description {
-  color: var(--text-secondary);
+  color:black;
 }
 
 .cta-section {
-  background-color: var(--bg-primary);
+  background-color: black;
 }
 
 .section-subtitle {
-  color: var(--text-secondary);
+  color:black;
 }
 
 .site-footer {
-  background-color: var(--footer-bg);
+  background-color: black;
 }
 
 .footer-title {
-  color: var(--footer-text);
+  color:  black;
 }
 
 .footer-description,
 .footer-links a,
 .footer-contact li,
 .copyright p {
-  color: var(--footer-text-secondary);
+  color:  black;
 }
 
 /* Estilo específico para o botão de tema */
 .theme-toggle {
   background: transparent;
-  border: 1px solid var(--border-color);
+  border: 1px solid black;
   border-radius: 8px;
   padding: 8px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-primary);
+  color: black;
   transition: background-color 0.3s ease;
 }
 
 .theme-toggle:hover {
-  background-color: var(--bg-secondary);
+  background-color: black;
 }
 
 .theme-toggle svg {
   width: 20px;
   height: 20px;
-  stroke: var(--text-primary);
+  stroke: black;
 }
 
 /* Adicione uma transição suave para todos os elementos */

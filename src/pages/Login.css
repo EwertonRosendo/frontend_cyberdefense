@@ -1,15 +1,4 @@
-/* ========== VARIÁVEIS DE TEMA ========== */
-:root {
-  --bg-body: #ffffff;
-  --bg-white: #ffffff;
-  --text-primary: #1f2937;
-  --text-secondary: #4b5563;
-  --text-tertiary: #374151;
-  --input-border: #d1d5db;
-  --input-text: #111827;
-  --input-placeholder: #adaebc;
-  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-}
+
 
 
 /* ========== ESTILOS GLOBAIS ========== */
@@ -25,15 +14,15 @@
 }
 
 body {
-  background-color: var(--bg-body);
+  background-color:  black;
 }
 
 /* ========== HEADER ========== */
 header {
   width: 100%;
   height: 61px;
-  background-color: var(--bg-white);
-  border-bottom: 1px solid var(--border-color);
+  background-color:  black;
+  border-bottom: 1px solid black;
   display: flex;
   justify-content: center;
 }
@@ -61,30 +50,30 @@ header {
 .portal-name {
   font-size: 20px;
   line-height: 20px;
-  color: var(--text-primary);
+  color: black;
 }
 
 /* ========== BOTÃO DE TEMA ========== */
 .theme-toggle {
   background: transparent;
-  border: 1px solid var(--border-color);
+  border: 1px solid black;
   border-radius: 8px;
   padding: 8px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-primary);
+  color: black;
 }
 
 .theme-toggle:hover {
-  background-color: var(--bg-body);
+  background-color:  black;
 }
 
 .theme-toggle svg {
   width: 20px;
   height: 20px;
-  stroke: var(--text-primary);
+  stroke: black;
 }
 
 /* ========== MAIN CONTENT ========== */
@@ -99,9 +88,9 @@ main {
 .login-card {
   width: 448px;
   padding: 32px;
-  background-color: var(--bg-white);
+  background-color:  black;
   border-radius: 8px;
-  box-shadow: var(--card-shadow);
+  box-shadow:  black;
 }
 
 .login-header {
@@ -113,14 +102,14 @@ main {
   font-size: 24px;
   line-height: 24px;
   font-weight: 400;
-  color: var(--button-primary);
+  color:  black;
   margin-bottom: 16px;
 }
 
 .login-subtitle {
   font-size: 16px;
   line-height: 16px;
-  color: var(--text-secondary);
+  color:black;
 }
 
 /* ========== FORM STYLES ========== */
@@ -135,7 +124,7 @@ main {
 .form-group label {
   display: block;
   font-size: 14px;
-  color: var(--text-tertiary);
+  color:  black;
   margin-bottom: 8px;
   line-height: 17px;
 }
@@ -144,15 +133,15 @@ main {
   width: 100%;
   height: 42px;
   padding: 0 12px;
-  border: 1px solid var(--input-border);
+  border: 1px solid  black;
   border-radius: 6px;
   font-size: 16px;
-  color: var(--input-text);
-  background-color: var(--bg-white);
+  color:  black;
+  background-color:  black;
 }
 
 .form-group input::placeholder {
-  color: var(--input-placeholder);
+  color:  black;
 }
 
 .form-options {
@@ -171,24 +160,24 @@ main {
 .remember-option input[type="checkbox"] {
   width: 16px;
   height: 16px;
-  border: 1px solid var(--input-border);
+  border: 1px solid  black;
 }
 
 .remember-option label {
   font-size: 14px;
-  color: var(--text-secondary);
+  color:black;
 }
 
 .forgot-password {
   font-size: 14px;
-  color: var(--text-secondary);
+  color:black;
   text-decoration: none;
 }
 
 .login-button {
   width: 100%;
   height: 40px;
-  background-color: var(--button-primary);
+  background-color:  black;
   color: #ffffff;
   border: none;
   border-radius: 6px;
@@ -198,7 +187,7 @@ main {
 }
 
 .login-button:hover {
-  background-color: var(--button-hover);
+  background-color:  black;
 }
 
 /* ========== SIGNUP LINK ========== */
@@ -209,12 +198,12 @@ main {
 
 .signup-text {
   font-size: 12px;
-  color: var(--text-secondary);
+  color:black;
 }
 
 .signup-action {
   font-size: 20px;
-  color: var(--link-color);
+  color:  black;
   text-decoration: none;
   border: none;
   background-color: none;
@@ -232,7 +221,7 @@ main {
 
 .terms-text {
   font-size: 14px;
-  color: var(--text-secondary);
+  color:black;
   margin-bottom: 14px;
 }
 
@@ -245,13 +234,13 @@ main {
 
 .terms-link {
   font-size: 14px;
-  color: var(--text-primary);
+  color: black;
   text-decoration: none;
 }
 
 .terms-separator {
   font-size: 14px;
-  color: var(--text-secondary);
+  color:black;
 }
 
 /* ========== FOOTER ========== */
@@ -277,7 +266,7 @@ main {
 
 .copyright {
   font-size: 14px;
-  color: var(--text-secondary);
+  color:black;
 }
 
 /* ========== RESPONSIVE ========== */

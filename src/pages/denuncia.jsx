@@ -330,6 +330,7 @@ const handleEnviarRespostas = async () => {
                     onClick={handleDenuncia}
                     className="submit-case-button"
                     id="submit-case"
+                    
                   >
                     Enviar Caso
                   </button>
