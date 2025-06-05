@@ -9,8 +9,8 @@
 }
 
 body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: #FFFFFF;
+  color: #000000;
   min-height: 100vh;
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -20,8 +20,8 @@ body {
 .App-site-header {
   width: 100%;
   height: 65px;
-  background-color: var(--bg-primary);
-  border-bottom: 1px solid var(--border-color);
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #e5e7eb;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,7 +33,7 @@ body {
 .App-header-container {
   width: 1280px;
   height: 64px;
-  background-color: var(--bg-primary);
+  background-color: #FFFFFF;
   display: flex;
   justify-content: center;
 }
@@ -41,7 +41,7 @@ body {
 .App-header-content {
   width: 1248px;
   height: 64px;
-  background-color: var(--bg-primary);
+  background-color: #FFFFFF;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -49,28 +49,28 @@ body {
 }
 
 .App-logo {
-  background-color: var(--bg-primary);
+  background-color: #FFFFFF;
 }
 
 .App-logo a {
   font-size: 20px;
   line-height: 20px;
   font-weight: 400;
-  color: var(--text-primary);
+  color: #000000;
   text-decoration: none;
 }
 
 .App-main-nav {
   display: flex;
   gap: 24px;
-  background-color: var(--bg-primary);
+  background-color: #FFFFFF;
 }
 
 .App-main-nav a {
   font-size: 16px;
   line-height: 16px;
   font-weight: 400;
-  color: var(--text-primary);
+  color: #000000;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -87,7 +87,7 @@ body {
 .App-login-button {
   background-color: transparent;
   border: none;
-  color: var(--text-primary);
+  color: #000000;
   font-size: 16px;
   line-height: 19px;
   cursor: pointer;
@@ -118,8 +118,8 @@ body {
 .App-main-frame {
   width: 100%;
   min-height: 100vh;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: #FFFFFF;
+  color: #000000;
   font-family: "Inter", sans-serif;
 }
 
@@ -139,7 +139,7 @@ body {
 
 /* Hero section */
 .App-hero-section {
-  background-color: var(--bg-secondary);
+  background-color: #F3F4F6;
   padding: 80px 0;
 }
 
@@ -157,7 +157,7 @@ body {
   font-size: 48px;
   line-height: 48px;
   font-weight: 400;
-  color: var(--text-primary);
+  color: #000000;
   margin-bottom: 20px;
   text-align: center;
   max-width: 732px;
@@ -166,7 +166,7 @@ body {
 .App-hero-subtitle {
   font-size: 20px;
   line-height: 20px;
-  color: var(--text-secondary);
+  color: #4b5563;
   margin-bottom: 40px;
   text-align: center;
   max-width: 744px;
@@ -193,7 +193,7 @@ body {
 
 /* Features section */
 .App-features-section {
-  background-color: var(--bg-primary);
+  background-color: #FFFFFF;
   padding: 60px 0;
 }
 
@@ -206,7 +206,7 @@ body {
 }
 
 .App-feature-card {
-  background-color: var(--card-bg);
+  background-color: #F3F4F6;
   border-radius: 8px;
   padding: 24px;
   width: 395px;
@@ -235,7 +235,7 @@ body {
   top: 60px;
   font-size: 20px;
   line-height: 24px;
-  color: var(--text-primary);
+  color: #000000;
   font-weight: 400;
 }
 
@@ -245,13 +245,13 @@ body {
   top: 100px;
   font-size: 16px;
   line-height: 19px;
-  color: var(--text-secondary);
+  color: #4b5563;
   max-width: 347px;
 }
 
 /* How it works section */
 .App-how-it-works-section {
-  background-color: var(--bg-secondary);
+  background-color: #F3F4F6;
   padding: 60px 0;
 }
 
@@ -314,13 +314,13 @@ body {
 .App-step-description {
   font-size: 16px;
   line-height: 22px;
-  color: var(--text-secondary);
+  color: #4b5563;
   font-weight: 400;
 }
 
 /* CTA section */
 .App-cta-section {
-  background-color: var(--bg-primary);
+  background-color: #FFFFFF;
   padding: 60px 0;
 }
 
@@ -333,7 +333,7 @@ body {
 .App-section-subtitle {
   font-size: 20px;
   line-height: 28px;
-  color: var(--text-secondary);
+  color: #4b5563;
   margin-bottom: 40px;
   text-align: center;
 }
@@ -383,7 +383,7 @@ body {
 
 /* Footer Styles */
 .App-site-footer {
-  background-color: var(--footer-bg);
+  background-color: #000000;
   width: 100%;
   padding: 40px 0 0 0;
   font-family: "Inter", sans-serif;
@@ -410,7 +410,7 @@ body {
 }
 
 .App-footer-title {
-  color: var(--footer-text);
+  color: #FFFFFF;
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
@@ -443,7 +443,7 @@ body {
 }
 
 .App-footer-links a:hover {
-  color: var(--footer-text);
+  color: #FFFFFF;
 }
 
 .App-footer-contact {
@@ -470,7 +470,7 @@ body {
 .App-copyright {
   text-align: center;
   padding: 20px 0;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid #e5e7eb;
   margin-top: 20px;
 }
 
@@ -514,122 +514,122 @@ body {
 
 /* Aplicação das variáveis nos elementos */
 .App-body {
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
+  background-color: #FFFFFF;
+  color: #000000;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .App-site-header {
-  background-color: var(--bg-primary);
-  border-bottom: 1px solid var(--border-color);
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .App-header-container,
 .App-header-content,
 .App-logo,
 .App-main-nav {
-  background-color: var(--bg-primary);
+  background-color: #FFFFFF;
 }
 
 .App-logo a,
 .App-main-nav a,
 .App-login-button {
-  color: var(--text-primary);
+  color: #000000;
 }
 
 .App-main-frame {
-  background-color: var(--bg-primary);
+  background-color: #FFFFFF;
 }
 
 .App-hero-section {
-  background-color: var(--bg-secondary);
+  background-color: #F3F4F6;
 }
 
 .App-hero-title {
-  color: var(--text-primary);
+  color: #000000;
 }
 
 .App-hero-subtitle {
-  color: var(--text-secondary);
+  color: #4b5563;
 }
 
 .App-features-section {
-  background-color: var(--bg-primary);
+  background-color: #FFFFFF;
 }
 
 .App-feature-card {
-  background-color: var(--card-bg);
+  background-color: #F3F4F6;
 }
 
 .App-feature-title {
-  color: var(--text-primary);
+  color: #000000;
 }
 
 .App-feature-description {
-  color: var(--text-secondary);
+  color: #4b5563;
 }
 
 .App-how-it-works-section {
-  background-color: var(--bg-secondary);
+  background-color: #F3F4F6;
 }
 
 .App-section-title {
-  color: var(--text-primary);
+  color: #000000;
 }
 
 .App-step-title {
-  color: var(--text-primary);
+  color: #000000;
 }
 
 .App-step-description {
-  color: var(--text-secondary);
+  color: #4b5563;
 }
 
 .App-cta-section {
-  background-color: var(--bg-primary);
+  background-color: #FFFFFF;
 }
 
 .App-section-subtitle {
-  color: var(--text-secondary);
+  color: #4b5563;
 }
 
 .App-site-footer {
-  background-color: var(--footer-bg);
+  background-color: #000000;
 }
 
 .App-footer-title {
-  color: var(--footer-text);
+  color: #FFFFFF;
 }
 
 .App-footer-description,
 .App-footer-links a,
 .App-footer-contact li,
 .App-copyright p {
-  color: var(--footer-text-secondary);
+  color: #9ca3af;
 }
 
 /* Estilo específico para o botão de tema */
 .App-theme-toggle {
   background: transparent;
-  border: 1px solid var(--border-color);
+  border: 1px solid #e5e7eb;
   border-radius: 8px;
   padding: 8px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-primary);
+  color: #000000;
   transition: background-color 0.3s ease;
 }
 
 .App-theme-toggle:hover {
-  background-color: var(--bg-secondary);
+  background-color: #F3F4F6;
 }
 
 .App-theme-toggle svg {
   width: 20px;
   height: 20px;
-  stroke: var(--text-primary);
+  stroke: #000000;
 }
 
 /* Adicione uma transição suave para todos os elementos */
