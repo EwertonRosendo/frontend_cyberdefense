@@ -28,7 +28,7 @@ function Login() {
     }
 
     await axios
-      .post(`${apiUrl}/sessions/create`, {
+      .post(`/api/sessions/create`, {
         user: {
           email: email,
           password: password,

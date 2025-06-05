@@ -27,7 +27,7 @@ function Cadastro() {
 
     try {
       await axios
-        .post(`${apiUrl}/users.json`, {
+        .post(`/api/users.json`, {
           user: {
             email: email,
             password: password,
@@ -52,7 +52,7 @@ function Cadastro() {
 
     const get_schools = async () => {
   try {
-      const response = await axios.get(`${apiUrl}/schools.json`, {
+      const response = await axios.get(`/api/schools.json`, {
        
       });
       

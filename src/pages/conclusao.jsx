@@ -18,7 +18,7 @@ function Conclusao() {
     e.preventDefault(); // Evita o recarregamento da página ao enviar o formulário
    
     await axios
-      .post(`${apiUrl}/cases/`${id}`, {
+      .post(`/api/cases/`${id}`, {
         user: {
           email: email,
           password: password,

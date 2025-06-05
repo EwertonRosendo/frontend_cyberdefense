@@ -38,7 +38,7 @@ function Denuncia() {
     });
 
     try {
-      const response = await axios.post(`${apiUrl}/cases.json`, formData, {
+      const response = await axios.post(`/api/cases.json`, formData, {
         headers: {
           Authorization: `Bearer ${userToken}`,
           "Content-Type": "multipart/form-data",
@@ -46,8 +46,7 @@ function Denuncia() {
       });
 
       if (response.status === 201) {
-        navigate("/conclusao");
-        
+        alert("Por favor, atualize sua pagina"); 
       }
     } catch (error) {
       console.error("Erro ao enviar denúncia:", error);
@@ -60,7 +59,7 @@ function Denuncia() {
   // Função para buscar as perguntas
   const get_questions = async () => {
   try {
-    const response = await axios.get(`${apiUrl}/school_questions/${school}`, {
+    const response = await axios.get(`/api/school_questions/${school}`, {
       headers: {
         Authorization: `Bearer ${userToken}`,
       },
@@ -76,7 +75,7 @@ function Denuncia() {
 
 const get_respostas = async () => {
   try {
-    const response = await axios.get(`${apiUrl}/user_answers/${userId}`, {
+    const response = await axios.get(`/api/user_answers/${userId}`, {
       headers: {
         Authorization: `Bearer ${userToken}`,
       },
@@ -94,7 +93,7 @@ const get_respostas = async () => {
 
 const get_respostasdescrit = async () => {
   try {
-    const response = await axios.get(`${apiUrl}/case_by_user/${userId}`, {
+    const response = await axios.get(`/api/case_by_user/${userId}`, {
       headers: {
         Authorization: `Bearer ${userToken}`,
       },
@@ -224,7 +223,7 @@ const handleEnviarRespostas = async () => {
   }));
 
   try {
-    const response = await axios.post(`${apiUrl}/school_answers.json`, {
+    const response = await axios.post(`/api/school_answers.json`, {
       school_answers
     }, {
       headers: {
@@ -257,6 +256,11 @@ const handleEnviarRespostas = async () => {
                 className="denuncia-shield-icon"
               />
               <span className="denuncia-portal-name">CyberDefense</span>
+            </div>
+            <div>
+              <button onClick={() => navigate('/school')}>
+                Area administrativa
+              </button>
             </div>
             
           </div>

@@ -20,11 +20,11 @@ const School = () => {
   // Buscar perguntas
   useEffect(() => {
     axios
-      .get(`${apiUrl}/school_questions/${school}`)
+      .get(`/api/school_questions/${school}`)
       .then((res) => setQuestions(res.data))
       .catch((err) => console.error("Erro ao buscar perguntas:", err));
     axios
-      .get(`${apiUrl}/users/school/${school}`)
+      .get(`/api/users/school/${school}`)
       .then((res) => setUsers(res.data))
       .catch((err) => console.error("Erro ao buscar usuários:", err));
   }, []);
@@ -35,7 +35,7 @@ const School = () => {
   // Deletar pergunta
   const deleteQuestion = (id) => {
     axios
-      .delete(`${apiUrl}/questions/${id}`)
+      .delete(`/api/questions/${id}`)
       .then(() => setQuestions((prev) => prev.filter((q) => q.id !== id)))
       .catch((err) => console.error("Erro ao deletar pergunta:", err));
   };
@@ -45,7 +45,7 @@ const School = () => {
     if (!newQuestion.trim()) return;
 
     axios
-      .post(`${apiUrl}/questions.json`, {
+      .post(`/api/questions.json`, {
         question: {
           question: newQuestion,
           school: school,
@@ -63,7 +63,7 @@ const School = () => {
     if (!selectedQuestion) return;
 
     axios
-      .put(`${apiUrl}/questions/${selectedQuestion.id}`, {
+      .put(`/api/questions/${selectedQuestion.id}`, {
         question: { question: newText },
       })
       .then((res) => {
