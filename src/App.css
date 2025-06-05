@@ -1,0 +1,723 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #000000;
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Header Styles */
+.App-site-header {
+  width: 100%;
+  height: 65px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.App-header-container {
+  width: 1280px;
+  height: 64px;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+}
+
+.App-header-content {
+  width: 1248px;
+  height: 64px;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.App-logo {
+  background-color: #FFFFFF;
+}
+
+.App-logo a {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #000000;
+  text-decoration: none;
+}
+
+.App-main-nav {
+  display: flex;
+  gap: 24px;
+  background-color: #FFFFFF;
+}
+
+.App-main-nav a {
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 400;
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.App-main-nav a:hover {
+  color: #1d4ed8;
+}
+
+.App-auth-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.App-login-button {
+  background-color: transparent;
+  border: none;
+  color: #000000;
+  font-size: 16px;
+  line-height: 19px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.App-login-button:hover {
+  color: #1d4ed8;
+}
+
+.App-register-button {
+  background-color: #1d4ed8;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 19px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.App-register-button:hover {
+  background-color: #1e40af;
+}
+
+/* Main frame styles */
+.App-main-frame {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #FFFFFF;
+  color: #000000;
+  font-family: "Inter", sans-serif;
+}
+
+/* Section styles */
+.App-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 60px 0;
+}
+
+.App-container {
+  width: 1280px;
+  max-width: 100%;
+  padding: 0 20px;
+}
+
+/* Hero section */
+.App-hero-section {
+  background-color: #F3F4F6;
+  padding: 80px 0;
+}
+
+.App-hero-content {
+  max-width: 768px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: transparent;
+}
+
+.App-hero-title {
+  font-size: 48px;
+  line-height: 48px;
+  font-weight: 400;
+  color: #000000;
+  margin-bottom: 20px;
+  text-align: center;
+  max-width: 732px;
+}
+
+.App-hero-subtitle {
+  font-size: 20px;
+  line-height: 20px;
+  color: #4b5563;
+  margin-bottom: 40px;
+  text-align: center;
+  max-width: 744px;
+}
+
+.App-cta-button {
+  background-color: #1d4ed8;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 15px 30px;
+  font-size: 18px;
+  line-height: 22px;
+  cursor: pointer;
+  width: 269px;
+  height: 71px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.App-cta-button:hover {
+  background-color: #1e40af;
+}
+
+/* Features section */
+.App-features-section {
+  background-color: #FFFFFF;
+  padding: 60px 0;
+}
+
+.App-features-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1248px;
+  margin: 0 auto;
+}
+
+.App-feature-card {
+  background-color: #F3F4F6;
+  border-radius: 8px;
+  padding: 24px;
+  width: 395px;
+  height: 172px;
+  position: relative;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.App-feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.App-feature-icon {
+  position: absolute;
+  left: 24px;
+  top: 21px;
+  width: 36px;
+  height: 44px;
+}
+
+.App-feature-title {
+  position: absolute;
+  left: 24px;
+  top: 60px;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+  font-weight: 400;
+}
+
+.App-feature-description {
+  position: absolute;
+  left: 24px;
+  top: 100px;
+  font-size: 16px;
+  line-height: 19px;
+  color: #4b5563;
+  max-width: 347px;
+}
+
+/* How it works section */
+.App-how-it-works-section {
+  background-color: #F3F4F6;
+  padding: 60px 0;
+}
+
+.App-section-title {
+  font-size: 30px;
+  line-height: 36px;
+  color: #1f2937;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.App-steps-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1248px;
+  margin: 0 auto;
+}
+
+.App-step {
+  width: 288px;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.App-step:hover {
+  transform: translateY(-5px);
+}
+
+.App-step-number {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.App-step-green {
+  background-color: #10b981;
+}
+
+.App-step-dark {
+  background-color: #111827;
+}
+
+.App-step-title {
+  font-size: 18px;
+  line-height: 24px;
+  color: #1f2937;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.App-step-description {
+  font-size: 16px;
+  line-height: 22px;
+  color: #4b5563;
+  font-weight: 400;
+}
+
+/* CTA section */
+.App-cta-section {
+  background-color: #FFFFFF;
+  padding: 60px 0;
+}
+
+.App-cta-content {
+  max-width: 768px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.App-section-subtitle {
+  font-size: 20px;
+  line-height: 28px;
+  color: #4b5563;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.App-buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.App-primary-button {
+  background-color: #1d4ed8;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 15px 20px;
+  font-size: 16px;
+  line-height: 19px;
+  cursor: pointer;
+  width: 151px;
+  height: 58px;
+  transition: background-color 0.3s ease;
+}
+
+.App-primary-button:hover {
+  background-color: #1e40af;
+}
+
+.App-secondary-button {
+  background-color: transparent;
+  color: #1f2937;
+  border: 1px solid #1f2937;
+  border-radius: 8px;
+  padding: 15px 20px;
+  font-size: 16px;
+  line-height: 19px;
+  cursor: pointer;
+  width: 154px;
+  height: 58px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.App-secondary-button:hover {
+  background-color: #1f2937;
+  color: #ffffff;
+}
+
+/* Footer Styles */
+.App-site-footer {
+  background-color: #000000;
+  width: 100%;
+  padding: 40px 0 0 0;
+  font-family: "Inter", sans-serif;
+}
+
+.App-footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.App-footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px 0;
+  max-width: 1248px;
+  margin: 0 auto;
+}
+
+.App-footer-column {
+  width: 288px;
+  margin-bottom: 30px;
+}
+
+.App-footer-title {
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+
+.App-footer-description {
+  color: var(--text-tertiary);
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.App-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.App-footer-links li {
+  margin-bottom: 12px;
+}
+
+.App-footer-links a {
+  color: var(--text-tertiary);
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 22px;
+  transition: color 0.3s ease;
+}
+
+.App-footer-links a:hover {
+  color: #FFFFFF;
+}
+
+.App-footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.App-footer-contact li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  color: var(--text-tertiary);
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.App-contact-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.App-copyright {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #e5e7eb;
+  margin-top: 20px;
+}
+
+.App-copyright p {
+  color: var(--text-tertiary);
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* Variáveis de cores para o tema claro (padrão) */
+
+
+/* Aplicação das variáveis nos elementos */
+.App-body {
+  background-color: #FFFFFF;
+  color: #000000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.App-site-header {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.App-header-container,
+.App-header-content,
+.App-logo,
+.App-main-nav {
+  background-color: #FFFFFF;
+}
+
+.App-logo a,
+.App-main-nav a,
+.App-login-button {
+  color: #000000;
+}
+
+.App-main-frame {
+  background-color: #FFFFFF;
+}
+
+.App-hero-section {
+  background-color: #F3F4F6;
+}
+
+.App-hero-title {
+  color: #000000;
+}
+
+.App-hero-subtitle {
+  color: #4b5563;
+}
+
+.App-features-section {
+  background-color: #FFFFFF;
+}
+
+.App-feature-card {
+  background-color: #F3F4F6;
+}
+
+.App-feature-title {
+  color: #000000;
+}
+
+.App-feature-description {
+  color: #4b5563;
+}
+
+.App-how-it-works-section {
+  background-color: #F3F4F6;
+}
+
+.App-section-title {
+  color: #000000;
+}
+
+.App-step-title {
+  color: #000000;
+}
+
+.App-step-description {
+  color: #4b5563;
+}
+
+.App-cta-section {
+  background-color: #FFFFFF;
+}
+
+.App-section-subtitle {
+  color: #4b5563;
+}
+
+.App-site-footer {
+  background-color: #000000;
+}
+
+.App-footer-title {
+  color: #FFFFFF;
+}
+
+.App-footer-description,
+.App-footer-links a,
+.App-footer-contact li,
+.App-copyright p {
+  color: #9ca3af;
+}
+
+/* Estilo específico para o botão de tema */
+.App-theme-toggle {
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  transition: background-color 0.3s ease;
+}
+
+.App-theme-toggle:hover {
+  background-color: #F3F4F6;
+}
+
+.App-theme-toggle svg {
+  width: 20px;
+  height: 20px;
+  stroke: #000000;
+}
+
+/* Adicione uma transição suave para todos os elementos */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Responsive styles */
+@media (max-width: 1280px) {
+  .App-container,
+  .App-header-container,
+  .App-footer-container {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .App-header-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .App-features-container,
+  .App-steps-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .App-feature-card {
+    width: 100%;
+    max-width: 395px;
+    margin-bottom: 20px;
+  }
+
+  .App-step {
+    width: 45%;
+    margin-bottom: 30px;
+  }
+
+  .App-main-nav {
+    display: none;
+  }
+
+  .App-footer-column {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .App-hero-title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+
+  .App-hero-subtitle {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .App-step {
+    width: 100%;
+  }
+
+  .App-buttons-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .App-primary-button,
+  .App-secondary-button {
+    width: 200px;
+  }
+
+  .App-footer-column {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .App-header-content {
+    flex-direction: column;
+    height: auto;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .App-logo,
+  .App-auth-buttons {
+    width: 100%;
+    text-align: center;
+  }
+
+  .App-auth-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .App-site-header {
+    height: auto;
+  }
+
+  .App-login-button,
+  .App-register-button {
+    width: 100%;
+  }
+
+  .App-hero-title {
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  .App-section {
+    padding: 40px 0;
+  }
+}

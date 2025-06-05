@@ -6,49 +6,75 @@ function App() {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <header className="site-header">
-        <div className="header-container">
-          <div className="header-content">
-            <div className="logo">
+    <div className="App-body">
+      <div className="App-site-header">
+        <div className="App-header-container">
+          <div className="App-header-content">
+            <div className="App-logo">
               <a href="#">CyberDefense</a>
             </div>
-            <nav className="main-nav">
+            <nav className="App-main-nav">
               <a href="#">Página inicial</a>
-              <a href="#">Portal de defensoria</a>
-              <a href="#">Analisar casos</a>
+              
+              <a href="#" onClick={() => navigate("/login")}>Analisar casos</a>
               <a href="#">Contato</a>
             </nav>
-            <div className="auth-buttons">
-              <button className="login-button" style={{color:"white",
-                border: "none",
-                fontWeight:"bold",                                
-                transition: "color 0.3s ease",
-                cursor: "pointer",
-                backgroundColor:"#1d4ed8", 
-                lineHeight:"19px",
-                               
-              }}>entrar na conta</button>
-              <button className="register-button" style={{color:"white", fontWeight:"bold"}}>se registrar</button>
-              
+            <div className="App-auth-buttons">
+              <button className="App-login-button" onClick={() => navigate("/login")}>Login</button>
+              <button onClick={() => navigate("/cadastro")} className="App-register-button">Registrar</button>
+              <button
+                className="App-theme-toggle"
+                id="theme-toggle"
+                aria-label="Alternar tema"
+              >
+                <svg
+                  className="App-sun-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                  />
+                </svg>
+                <svg
+                  className="App-moon-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  style={{ display: "none" }}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
-      </header>
+      </div>
 
-      <main className="main-frame">
-        <section className="section hero-section">
+      <div className="App-main-frame">
+        <section className="App-section hero-section">
           <div>
-            <div className="hero-content">
-              <h1 className="hero-title">
+            <div className="App-hero-content">
+              <h1 className="App-hero-title">
                 Está sofrendo alguma denúncia sobre práticas de cyberbullying?
               </h1>
-              <p className="hero-subtitle">
+              <p className="App-hero-subtitle">
                 Pronto para buscar ajuda? deixe nos mediar a situação.
               </p>
               <button
                 onClick={() => navigate("/login")}
-                className="cta-button"
+                className="App-cta-button"
                 id="redirect-button"
               >
                 Click aqui e diga sua Versão
@@ -58,43 +84,42 @@ function App() {
           </div>
         </section>
 
-        <section className="section features-section">
+        <section className="App-section features-section">
           <div>
-            <div className="features-container">
-              <div className="feature-card">
+            <div className="App-features-container">
+              <div className="App-feature-card">
                 <img
                   src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
                   alt="Ícone de Segurança"
-                  className="feature-icon"
+                  className="App-feature-icon"
                 />
-                <h3 className="feature-title">Envio Seguro</h3>
-                <p className="feature-description">
+                <h3 className="App-feature-title">Envio Seguro</h3>
+                <p className="App-feature-description">
                   Envie capturas de tela, mensagens e documentos com segurança
                   para apoiar o seu caso.
                 </p>
               </div>
 
-              <div className="feature-card">
+              <div className="App-feature-card">
                 <img
                   src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
                   alt="Ícone de Análise Legal"
-                  className="feature-icon"
+                  className="App-feature-icon"
                 />
-                <h3 className="feature-title">Análise Legal</h3>
-                <p className="feature-description">
-                  Sua evidência estará acessível apenas para autoridades legais
-                  autorizadas e órgãos competentes.
+                <h3 className="App-feature-title">Análise</h3>
+                <p className="App-feature-description">
+                  Sua evidência estará acessível apenas para você e para o responsável da instituição.
                 </p>
               </div>
 
-              <div className="feature-card">
+              <div className="App-feature-card">
                 <img
                   src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
                   alt="Ícone de Privacidade"
-                  className="feature-icon"
+                  className="App-feature-icon"
                 />
-                <h3 className="feature-title">Privacidade Protegida</h3>
-                <p className="feature-description">
+                <h3 className="App-feature-title">Privacidade Protegida</h3>
+                <p className="App-feature-description">
                   Suas informações são tratadas com total confidencialidade e
                   proteção de dados.
                 </p>
@@ -103,42 +128,42 @@ function App() {
           </div>
         </section>
 
-        <section className="section how-it-works-section">
+        <section className="App-section how-it-works-section">
           <div>
-            <h2 className="section-title">Como Funciona</h2>
-            <div className="steps-container">
-              <div className="step">
-                <div className="step-number step-green">
+            <h2 className="App-section-title">Como Funciona</h2>
+            <div className="App-steps-container">
+              <div className="App-step">
+                <div className="App-step-number step-green">
                   <span>1</span>
                 </div>
-                <h3 className="step-title">Criar Conta</h3>
-                <p className="step-description">Cadastre-se com seus dados.</p>
+                <h3 className="App-step-title">Criar Conta</h3>
+                <p className="App-step-description">Cadastre-se com seus dados.</p>
               </div>
 
-              <div className="step">
-                <div className="step-number step-dark">
+              <div className="App-step">
+                <div className="App-step-number step-dark">
                   <span>2</span>
                 </div>
-                <h3 className="step-title">Enviar Evidências e Provas</h3>
-                <p className="step-description">
+                <h3 className="App-step-title">Enviar Evidências e Provas</h3>
+                <p className="App-step-description">
                   Envie seus documentos para analisarmos.
                 </p>
               </div>
 
-              <div className="step">
-                <div className="step-number step-dark">
+              <div className="App-step">
+                <div className="App-step-number step-dark">
                   <span>3</span>
                 </div>
-                <h3 className="step-title">Fornecer Contexto</h3>
-                <p className="step-description">Explique sua situação.</p>
+                <h3 className="App-step-title">Fornecer Contexto</h3>
+                <p className="App-step-description">Explique sua situação.</p>
               </div>
 
-              <div className="step">
-                <div className="step-number step-dark">
+              <div className="App-step">
+                <div className="App-step-number step-dark">
                   <span>4</span>
                 </div>
-                <h3 className="step-title">Processo de Análise</h3>
-                <p className="step-description">
+                <h3 className="App-step-title">Processo de Análise</h3>
+                <p className="App-step-description">
                   A Instituição irá avaliar seu caso.
                 </p>
               </div>
@@ -146,39 +171,39 @@ function App() {
           </div>
         </section>
 
-        <section className="section cta-section">
+        <section className="App-section cta-section">
           <div>
-            <div className="cta-content">
-              <h2 className="section-title">
+            <div className="App-cta-content">
+              <h2 className="App-section-title">
                 Pronto Para Nos Enviar Seu Caso?
               </h2>
-              <p className="section-subtitle">
+              <p className="App-section-subtitle">
                 Dê o primeiro passo para limpar seu nome.
               </p>
-              <div className="buttons-container">
-                <button className="primary-button">Começar Agora</button>
-                <button className="secondary-button">Saiba Mais</button>
+              <div className="App-buttons-container">
+                <button className="App-primary-button" onClick={() => navigate("/login")}>Começar Agora</button>
+                <button className="App-secondary-button">Saiba Mais</button>
               </div>
             </div>
           </div>
         </section>
-      </main>
+      </div>
 
-      <footer className="site-footer">
-        <div className="footer-container">
-          <div className="footer-content">
-            <div className="footer-column">
-              <h3 className="footer-title">CyberDefense</h3>
-              <p className="footer-description">
+      <div className="App-site-footer">
+        <div className="App-footer-container">
+          <div className="App-footer-content">
+            <div className="App-footer-column">
+              <h3 className="App-footer-title">CyberDefense</h3>
+              <p className="App-footer-description">
                 Apoiando a defesa justa contra acusações de bullying.
               </p>
             </div>
 
-            <div className="footer-column">
-              <h3 className="footer-title">Links Rapidos</h3>
-              <ul className="footer-links">
+            <div className="App-footer-column">
+              <h3 className="App-footer-title">Links Rapidos</h3>
+              <ul className="App-footer-links">
                 <li>
-                  <a href="#">tela de inicio</a>
+                  <a href="#">Tela Inicial</a>
                 </li>
                 <li>
                   <a href="#">Enviar Evidência</a>
@@ -192,9 +217,9 @@ function App() {
               </ul>
             </div>
 
-            <div className="footer-column">
-              <h3 className="footer-title">Legal</h3>
-              <ul className="footer-links">
+            <div className="App-footer-column">
+              <h3 className="App-footer-title">Legal</h3>
+              <ul className="App-footer-links">
                 <li>
                   <a href="#">Política de Privacidade</a>
                 </li>
@@ -207,14 +232,14 @@ function App() {
               </ul>
             </div>
 
-            <div className="footer-column">
-              <h3 className="footer-title">Contato</h3>
-              <ul className="footer-contact">
+            <div className="App-footer-column">
+              <h3 className="App-footer-title">Contato</h3>
+              <ul className="App-footer-contact">
                 <li>
                   <img
                     src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
                     alt="Email icon"
-                    className="contact-icon"
+                    className="App-contact-icon"
                   />
                   <span>Email: support&#64;cyberdefense.com</span>
                 </li>
@@ -222,7 +247,7 @@ function App() {
                   <img
                     src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
                     alt="Phone icon"
-                    className="contact-icon"
+                    className="App-contact-icon"
                   />
                   <span>Telefone: +81 (55) 123-4567</span>
                 </li>
@@ -230,11 +255,11 @@ function App() {
             </div>
           </div>
 
-          <div className="copyright">
+          <div className="App-copyright">
             <p>© 2025 CyberDefense. Todos os direitos reservados.</p>
           </div>
         </div>
-      </footer>
+      </div>
     </div>
   );
 }

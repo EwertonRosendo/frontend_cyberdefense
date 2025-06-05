@@ -1,7 +1,19 @@
-body {
-  background-color: #ffffff;
-  color: #1f2937;
-  font-family: Arial, sans-serif;
+/* ========== VARIÁVEIS DE TEMA ========== */
+:root {
+  --bg-body: #ffffff;
+  --bg-white: #ffffff;
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --text-tertiary: #374151;
+  --input-border: #d1d5db;
+  --input-text: #111827;
+  --input-placeholder: #adaebc;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ========== ESTILOS GLOBAIS ========== */
+* {
   margin: 0;
   padding: 0;
 }
@@ -60,17 +72,133 @@ button:hover {
   background-color: #1658b3;
 }
 
-a {
-  color: #0058d2;
+/* ========== SIGNUP LINK ========== */
+.signup-link {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.signup-text {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.signup-action {
+  font-size: 20px;
+  color: var(--link-color);
   text-decoration: none;
+  border: none;
+  background-color: none;
+  cursor: pointer;
+}
+.signup-action:hover {
+  background-color: black;
+  color:blue;
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-hr {
-  border: none;
-  border-top: 1px solid #e5e7eb;
-  margin: 20px 0;
+.terms-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
 }
+
+.terms-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.terms-link {
+  font-size: 14px;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.terms-separator {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* ========== FOOTER ========== */
+.footer-content {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding: 40px 0;
+    max-width: 1248px;
+    margin: 0 auto;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.footer-content {
+  width: 1280px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.copyright {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .login-card {
+    width: 90%;
+    max-width: 448px;
+  }
+
+  .header-content {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 24px;
+  }
+
+  .login-title {
+    font-size: 22px;
+  }
+
+  .login-subtitle {
+    font-size: 14px;
+  }
+}
+
+.custom-select {
+  width: 100%;
+  padding: 10px 14px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  color: #333;
+  font-size: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.custom-select:focus {
+  border-color: #3b82f6; /* azul */
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+  outline: none;
+}
+
+.custom-select option:disabled {
+  color: #999;
+}
+

@@ -195,8 +195,6 @@ main {
 
 .login-button {
   height: 40px;
-  background-color: var(--button-primary);
-  color: #ffffff;
   border: none;
   border-radius: 6px;
   font-size: 16px;
@@ -206,7 +204,7 @@ main {
 }
 
 .login-button:hover {
-  background-color: var(--button-hover);
+  background-color: green;
 }
 
 /* ========== ESTILOS DOS LINKS DE CADASTRO ========== */
@@ -311,3 +309,30 @@ footer {
     font-size: 14px;
   }
 }
+
+.custom-select {
+  width: 100%;
+  padding: 10px 14px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+  color: #333;
+  font-size: 16px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.custom-select:focus {
+  border-color: #3b82f6; /* azul */
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+  outline: none;
+}
+
+.custom-select option:disabled {
+  color: #999;
+}
+
