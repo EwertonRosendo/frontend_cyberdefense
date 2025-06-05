@@ -1,4 +1,24 @@
-.denuncia-container {
+/* ========== VARIÁVEIS DE TEMA ========== */
+
+
+/* Tema escuro */
+
+
+/* ========== ESTILOS GLOBAIS ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+body {
+  background-color: var(--bg-body);
+}
+
+.container {
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -6,9 +26,16 @@
 }
 
 /* ========== HEADER ========== */
+header {
+  width: 100%;
+  height: 61px;
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+}
 
-
-.denuncia-header-content {
+.header-content {
   width: 1280px;
   height: 60px;
   display: flex;
@@ -17,48 +44,48 @@
   padding: 0 24px;
 }
 
-.denuncia-logo-container {
+.logo-container {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.denuncia-shield-icon {
+.shield-icon {
   width: 24px;
   height: 24px;
 }
 
-.denuncia-portal-name {
+.portal-name {
   font-size: 20px;
   line-height: 20px;
-  color: #1f2937;
+  color: var(--text-primary);
 }
 
 /* ========== BOTÃO DE TEMA ========== */
-.denuncia-theme-toggle {
+.theme-toggle {
   background: transparent;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 8px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #1f2937;
+  color: var(--text-primary);
 }
 
-.denuncia-theme-toggle:hover {
-  background-color: #ffffff;
+.theme-toggle:hover {
+  background-color: var(--bg-body);
 }
 
-.denuncia-theme-toggle svg {
+.theme-toggle svg {
   width: 20px;
   height: 20px;
-  stroke: #1f2937;
+  stroke: var(--text-primary);
 }
 
 /* ========== MAIN CONTENT ========== */
-.denuncia-main {
+main {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -68,60 +95,60 @@
 }
 
 /* Case Status Section */
-.denuncia-case-status-section {
+.case-status-section {
   width: 100%;
   max-width: 1248px;
   background-color: var(--bg-white);
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 24px;
 }
 
-.denuncia-case-status-title {
+.case-status-title {
   font-size: 20px;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 24px;
 }
 
-.denuncia-status-steps {
+.status-steps {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.denuncia-status-step {
+.status-step {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
 }
 
-.denuncia-status-icon {
+.status-icon {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   background-color: var(--bg-secondary);
-  border: 2px solid #e5e7eb;
+  border: 2px solid var(--border-color);
 }
 
-.denuncia-status-icon.completed {
+.status-icon.completed {
   background-color: #10b981;
   border-color: #10b981;
 }
 
-.denuncia-status-text {
+.status-text {
   font-size: 14px;
-  color: #4b5563;
+  color: var(--text-secondary);
 }
 
-.denuncia-status-bar {
+.status-bar {
   flex: 1;
   height: 4px;
-  background-color: #e5e7eb;
+  background-color: var(--border-color);
   position: relative;
 }
 
-.denuncia-status-bar-filled {
+.status-bar-filled {
   position: absolute;
   left: 0;
   top: 0;
@@ -131,7 +158,7 @@
 }
 
 /* Evidence Upload Section */
-.denuncia-evidence-section {
+.evidence-section {
   width: 100%;
   max-width: 1248px;
   background-color: #ffffff;
@@ -140,7 +167,7 @@
   padding: 24px;
 }
 
-.denuncia-imagenusuario{
+.imagenusuario{
   width: 150px;  /* ou qualquer tamanho que quiser, ex: 100px */
   height: auto;  /* mantém a proporção original da imagem */
   border-radius: 8px;  /* deixa a borda levemente arredondada, opcional */
@@ -148,27 +175,27 @@
   margin: 8px;  /* espaço entre as imagens, se tiver várias */ 
 }
 
-.denuncia-evidence-title {
+.evidence-title {
   font-size: 20px;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 24px;
 }
 
-.denuncia-upload-area {
-  border: 2px dashed #1b6de0;
+.upload-area {
+  border: 2px dashed var(--button-primary);
   border-radius: 8px;
   padding: 32px;
   text-align: center;
   margin-bottom: 24px;
 }
 
-.denuncia-upload-instructions {
-  color: #4b5563;
+.upload-instructions {
+  color: var(--text-secondary);
   margin-bottom: 16px;
 }
 
-.denuncia-select-files-button {
-  background-color: #1b6de0;
+.select-files-button {
+  background-color: var(--button-primary);
   color: white;
   border: none;
   border-radius: 8px;
@@ -177,74 +204,74 @@
   margin: 16px 0;
 }
 
-.denuncia-select-files-button:hover {
-  background-color: #1658b3;
+.select-files-button:hover {
+  background-color: var(--button-hover);
 }
 
-.denuncia-supported-formats {
+.supported-formats {
   font-size: 14px;
-  color: #4b5563;
+  color: var(--text-secondary);
 }
 
-.denuncia-case-description textarea {
+.case-description {
   margin-bottom: 24px;
 }
 
-.denuncia-case-description label {
+.case-description label {
   display: block;
   font-size: 14px;
-  color: #374151;
+  color: var(--text-tertiary);
   margin-bottom: 8px;
 }
 
-.denuncia-case-description textarea {
+.case-description textarea {
   width: 100%;
   height: 120px;
   padding: 12px;
   border: 1px #d1d5db;
   border-radius: 8px;
   background-color: #ffffff;
-  color: #111827;
+  color: var(--input-text);
   resize: vertical;
 }
 
-.denuncia-data-security {
+.data-security {
   font-size: 14px;
-  color: #4b5563;
+  color: var(--text-secondary);
 }
 
 /* Review Process Section */
-.denuncia-review-process-section {
+.review-process-section {
   width: 100%;
   max-width: 1248px;
   background-color: #ffffff;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 24px;
 }
 
-.denuncia-review-process-nav {
+.review-process-nav {
   display: flex;
   gap: 24px;
   margin-bottom: 24px;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--border-color);
 }
 
-.denuncia-nav-button {
+.nav-button {
   background: none;
   border: none;
   padding: 12px 0;
-  color: #4b5563;
+  color: var(--text-secondary);
   cursor: pointer;
   position: relative;
 }
 
-.denuncia-nav-button.active {
-  color: #1b6de0;
+.nav-button.active {
+  color: var(--button-primary);
 }
 /* Submit Case Button Styles */
-.denuncia-submit-case-button {
-  background-color: #1b6de0;
+.submit-case-button {
+  background-color: var(--button-primary);
   color: white;
   border: none;
   border-radius: 8px;
@@ -255,132 +282,124 @@
   transition: background-color 0.3s ease;
 }
 
-.denuncia-submit-case-button:hover {
-  background-color: #1658b3;
+.submit-case-button:hover {
+  background-color: var(--button-hover);
 }
-.denuncia-nav-button.active::after {
+.nav-button.active::after {
   content: "";
   position: absolute;
   bottom: -1px;
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #1b6de0;
+  background-color: var(--button-primary);
 }
 
-.denuncia-review-process-title {
+.review-process-title {
   font-size: 20px;
-  color: #1f2937;
+  color: var(--text-primary);
   margin-bottom: 16px;
 }
 
-.denuncia-review-process-description {
-  color: #4b5563;
+.review-process-description {
+  color: var(--text-secondary);
   line-height: 1.5;
 }
 
 /* ========== FOOTER ========== */
-.denuncia-site-footer {
+.site-footer {
   width: 100%;
   background-color: var(#ffffff);
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid var(--border-color);
   padding: 24px 0;
 }
 
-.denuncia-footer-container {
+.footer-container {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-.denuncia-footer-content {
+.footer-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.denuncia-footer-nav {
+.footer-nav {
   display: flex;
   gap: 24px;
 }
 
-.denuncia-footer-link {
-  color: #4b5563;
+.footer-link {
+  color: var(--text-secondary);
   text-decoration: none;
   font-size: 14px;
 }
 
-.denuncia-report-button {
+.report-button {
   display: flex;
   align-items: center;
   gap: 8px;
   background: none;
   border: none;
-  color: #4b5563;
+  color: var(--text-secondary);
   cursor: pointer;
   font-size: 14px;
 }
 
-.denuncia-report-icon {
+.report-icon {
   width: 16px;
   height: 16px;
 }
 
-.denuncia-schoolname{  
+.schoolname{  
   margin-bottom: 20px;
   font-weight: bold;
 }
 
-
+.questionstyle{
+  
+}
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
-  .denuncia-status-steps {
+  .status-steps {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .denuncia-status-bar {
+  .status-bar {
     width: 4px;
     height: 40px;
   }
 
-  .denuncia-review-process-nav {
+  .review-process-nav {
     flex-direction: column;
     gap: 12px;
   }
 
-  .denuncia-footer-content {
+  .footer-content {
     flex-direction: column;
     gap: 16px;
   }
 
-  .denuncia-footer-nav {
+  .footer-nav {
     flex-wrap: wrap;
     justify-content: center;
   }
 }
 
 @media (max-width: 480px) {
-  .denuncia-header-content {
+  .header-content {
     flex-direction: column;
     height: auto;
     padding: 16px;
     gap: 16px;
   }
 
-  .denuncia-file-upload{
-    background-color: #1b6de0;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin: 16px 0;
-  }
-
-  .denuncia-theme-toggle {
+  .theme-toggle {
     margin-top: 8px;
   }
 }

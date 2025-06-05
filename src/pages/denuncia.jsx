@@ -38,7 +38,7 @@ function Denuncia() {
     });
 
     try {
-      const response = await axios.post(`/api/cases.json`, formData, {
+      const response = await axios.post(`${apiUrl}/cases.json`, formData, {
         headers: {
           Authorization: `Bearer ${userToken}`,
           "Content-Type": "multipart/form-data",
@@ -46,7 +46,8 @@ function Denuncia() {
       });
 
       if (response.status === 201) {
-        alert("Por favor, atualize sua pagina"); 
+        navigate("/conclusao");
+        
       }
     } catch (error) {
       console.error("Erro ao enviar denúncia:", error);
@@ -59,7 +60,7 @@ function Denuncia() {
   // Função para buscar as perguntas
   const get_questions = async () => {
   try {
-    const response = await axios.get(`/api/school_questions/${school}`, {
+    const response = await axios.get(`${apiUrl}/school_questions/${school}`, {
       headers: {
         Authorization: `Bearer ${userToken}`,
       },
@@ -75,7 +76,7 @@ function Denuncia() {
 
 const get_respostas = async () => {
   try {
-    const response = await axios.get(`/api/user_answers/${userId}`, {
+    const response = await axios.get(`${apiUrl}/user_answers/${userId}`, {
       headers: {
         Authorization: `Bearer ${userToken}`,
       },
@@ -93,7 +94,7 @@ const get_respostas = async () => {
 
 const get_respostasdescrit = async () => {
   try {
-    const response = await axios.get(`/api/case_by_user/${userId}`, {
+    const response = await axios.get(`${apiUrl}/case_by_user/${userId}`, {
       headers: {
         Authorization: `Bearer ${userToken}`,
       },
@@ -130,31 +131,33 @@ const renderImages = (imagens) => {
     <img
   src={image}
   alt="Imagem de exemplo"
-  className="denuncia-imagenusuario"
+  className="imagenusuario"
 />
 ));
 };
 // Função de renderização das html de upload de imagem
 const renderUploadImages = () => {
   return (
-    <div className="denuncia-upload-area">
-      <div className="denuncia-upload-instructions">
+    <div className="upload-area">
+      <div className="upload-instructions">
         <p>
           Para fazer Upload da Evidência arraste e solte seus arquivos
           aqui ou clique para procurar.
         </p>
-        
+        <label htmlFor="file-upload" className="select-files-button">
+          Selecionar arquivos
+        </label>
       </div>
       <input
         required
         type="file"
         id="file-upload"
-        className="denuncia-select-files-button"
+        className="file-upload"
         multiple
         onChange={(e) => setFiles(Array.from(e.target.files))}
         accept=".png,.jpg,.jpeg,.pdf,.doc,.docx"
-      />      
-      <p className="denuncia-supported-formats">
+      />
+      <p className="supported-formats">
         Formatos suportados: PNG, JPG, PDF, DOC
       </p>
     </div>
@@ -172,8 +175,8 @@ const renderAnswers = (respostas) => {
 
 
   return respostas.map((resposta, index) => (
-    <div className="denuncia-case-description" id={`question-${resposta.id}`} key={resposta.id}>
-      <p className="denuncia-questionstyle">{resposta.question.question}</p>        
+    <div className="case-description" id={`question-${resposta.id}`} key={resposta.id}>
+      <p className="questionstyle">{resposta.question.question}</p>        
       <textarea
         disabled
        
@@ -196,8 +199,8 @@ const renderQuestions = (questions) => {
   }
 
   return questions.map((question, index) => (
-    <div className="denuncia-case-description" id={`question-${question.id}`} key={question.id}>
-      <p className="denuncia-questionstyle">{question.question}</p>
+    <div className="case-description" id={`question-${question.id}`} key={question.id}>
+      <p className="questionstyle">{question.question}</p>
 
       <textarea
         name={`question-${question.id}`}
@@ -223,7 +226,7 @@ const handleEnviarRespostas = async () => {
   }));
 
   try {
-    const response = await axios.post(`/api/school_answers.json`, {
+    const response = await axios.post(`${apiUrl}/school_answers.json`, {
       school_answers
     }, {
       headers: {
@@ -248,56 +251,51 @@ const handleEnviarRespostas = async () => {
     <div>
       <div>
         <header>
-          <div className="denuncia-header-content">
-            <div className="denuncia-logo-container">
+          <div className="header-content">
+            <div className="logo-container">
               <img
                 src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
                 alt="Shield Icon"
-                className="denuncia-shield-icon"
+                className="shield-icon"
               />
-              <span className="denuncia-portal-name">CyberDefense</span>
-            </div>
-            <div>
-              <button onClick={() => navigate('/school')}>
-                Area administrativa
-              </button>
+              <span className="portal-name">CyberDefense</span>
             </div>
             
           </div>
         </header>
 
-        <div className="denuncia-main">
-          <section className="denuncia-case-status-section">
-            <div className="denuncia-case-status-container">
-              <h2 className="denuncia-case-status-title">Case Status</h2>
-              <div className="denuncia-status-steps">
-                <div className="denuncia-status-step">
-                  <div className="denuncia-status-icon completed"></div>
-                  <span className="denuncia-status-text">Evidência Recebida</span>
+        <main>
+          <section className="case-status-section">
+            <div className="case-status-container">
+              <h2 className="case-status-title">Case Status</h2>
+              <div className="status-steps">
+                <div className="status-step">
+                  <div className="status-icon completed"></div>
+                  <span className="status-text">Evidência Recebida</span>
                 </div>
-                <div className="denuncia-status-bar">
-                  <div className="denuncia-status-bar-filled"></div>
+                <div className="status-bar">
+                  <div className="status-bar-filled"></div>
                 </div>
-                <div className="denuncia-status-step">
-                  <div className="denuncia-status-icon"></div>
-                  <span className="denuncia-status-text">Em Análise</span>
+                <div className="status-step">
+                  <div className="status-icon"></div>
+                  <span className="status-text">Em Análise</span>
                 </div>
-                <div className="denuncia-status-bar"></div>
-                <div className="denuncia-status-step">
-                  <div className="denuncia-status-icon"></div>
-                  <span className="denuncia-status-text">Enviado a Instituição</span>
+                <div className="status-bar"></div>
+                <div className="status-step">
+                  <div className="status-icon"></div>
+                  <span className="status-text">Enviado a Instituição</span>
                 </div>
               </div>
             </div>
           </section>
 
-          <section className="denuncia-evidence-section">
+          <section className="evidence-section">
 
             
-            <div className="denuncia-evidence-container">
-              <h2 className="denuncia-evidence-title">Envie sua evidência</h2>
+            <div className="evidence-container">
+              <h2 className="evidence-title">Envie sua evidência</h2>
                 {hasUserAnswerd ? renderImages(images.images) : renderUploadImages()}
-              <div className="denuncia-case-description">
+              <div className="case-description">
                 <label htmlFor="case-description">Descreva seu caso</label>
                   {
                     hasUserAnswerd ? 
@@ -317,7 +315,7 @@ const handleEnviarRespostas = async () => {
               </div>
                 <div>
                   
-                  <p className="denuncia-schoolname">
+                  <p className="schoolname">
                     {schoolHasQuestions ? "Perguntas da sua instituição" : "Sua Instituição não possui perguntas extras"}
                   </p>
                 </div>
@@ -330,32 +328,32 @@ const handleEnviarRespostas = async () => {
                   <button
                 
                     onClick={handleDenuncia}
-                    className="denuncia-submit-case-button"
+                    className="submit-case-button"
                     id="submit-case"
                   >
                     Enviar Caso
                   </button>
                 }          
-              <p className="denuncia-data-security">
+              <p className="data-security">
                 Seus dados são seguros e confidenciais.
               </p>
             </div>
           </section>
 
-          <section className="denuncia-review-process-section">
-            <div className="denuncia-review-process-container">
-              <div className="denuncia-review-process-nav">
-                <button className="denuncia-nav-button active">
+          <section className="review-process-section">
+            <div className="review-process-container">
+              <div className="review-process-nav">
+                <button className="nav-button active">
                   Como funciona o processo de revisão?
                 </button>
-                <button className="denuncia-nav-button">Seus direitos</button>
-                <button className="denuncia-nav-button">
+                <button className="nav-button">Seus direitos</button>
+                <button className="nav-button">
                   O que acontece após o envio?
                 </button>
               </div>
-              <div className="denuncia-review-process-content">
-                <h2 className="denuncia-review-process-title">Processo de Revisão</h2>
-                <p className="denuncia-review-process-description">
+              <div className="review-process-content">
+                <h2 className="review-process-title">Processo de Revisão</h2>
+                <p className="review-process-description">
                   Nossa equipe analisa cuidadosamente todas as evidências
                   enviadas dentro de 48 horas. Garantimos um processo de
                   avaliação justo e minucioso, mantendo rigorosos padrões de
@@ -364,31 +362,31 @@ const handleEnviarRespostas = async () => {
               </div>
             </div>
           </section>
-        </div>
+        </main>
 
-        <footer className="denuncia-site-footer">
-          <div className="denuncia-footer-container">
-            <div className="denuncia-footer-content">
-              <nav className="denuncia-footer-nav">
-                <a href="#" className="denuncia-footer-link">
+        <footer className="site-footer">
+          <div className="footer-container">
+            <div className="footer-content">
+              <nav className="footer-nav">
+                <a href="#" className="footer-link">
                   Termos de Uso
                 </a>
-                <a href="#" className="denuncia-footer-link">
+                <a href="#" className="footer-link">
                   Política de Privacidade
                 </a>
-                <a href="#" className="denuncia-footer-link">
+                <a href="#" className="footer-link">
                   Contato
                 </a>
-                <a href="#" className="denuncia-footer-link">
+                <a href="#" className="footer-link">
                   Ajuda
                 </a>
               </nav>
-              <button className="denuncia-report-button">
+              <button className="report-button">
                 <span>Reportar problema</span>
                 <img
                   src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
                   alt="Report icon"
-                  className="denuncia-report-icon"
+                  className="report-icon"
                 />
               </button>
             </div>
