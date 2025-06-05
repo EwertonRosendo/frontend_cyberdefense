@@ -15,13 +15,13 @@ function App() {
             </div>
             <nav className="App-main-nav">
               <a href="#">Página inicial</a>
-              <a href="#">Portal de defensoria</a>
-              <a href="#">Analisar casos</a>
+              
+              <a href="#" onClick={() => navigate("/login")}>Analisar casos</a>
               <a href="#">Contato</a>
             </nav>
             <div className="App-auth-buttons">
-              <button className="App-login-button" onClick={() => navigate("/login")}>entrar na conta</button>
-              <button onClick={() => navigate("/cadastro")} className="App-register-button">se registrar</button>
+              <button className="App-login-button" onClick={() => navigate("/login")}>Login</button>
+              <button onClick={() => navigate("/cadastro")} className="App-register-button">Registrar</button>
               <button
                 className="App-theme-toggle"
                 id="theme-toggle"
@@ -106,7 +106,7 @@ function App() {
                   alt="Ícone de Análise Legal"
                   className="App-feature-icon"
                 />
-                <h3 className="App-feature-title">Análise Legal</h3>
+                <h3 className="App-feature-title">Análise</h3>
                 <p className="App-feature-description">
                   Sua evidência estará acessível apenas para você e para o responsável da instituição.
                 </p>
@@ -203,7 +203,7 @@ function App() {
               <h3 className="App-footer-title">Links Rapidos</h3>
               <ul className="App-footer-links">
                 <li>
-                  <a href="#">tela de inicio</a>
+                  <a href="#">Tela Inicial</a>
                 </li>
                 <li>
                   <a href="#">Enviar Evidência</a>
