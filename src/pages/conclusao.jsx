@@ -18,7 +18,7 @@ function Conclusao() {
     e.preventDefault(); // Evita o recarregamento da página ao enviar o formulário
    
     await axios
-      .post(`/api/cases/`${id}`, {
+      .post(`${apiUrl}/cases/`${id}`, {
         user: {
           email: email,
           password: password,
@@ -36,23 +36,23 @@ function Conclusao() {
     <body>
       <div>
         <header>
-          <div className="conclusao-header-content">
-            <div className="conclusao-logo-container">
+          <div className="header-content">
+            <div className="logo-container">
               <img
                 src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
                 alt="Shield Icon"
-                className="conclusao-shield-icon"
+                className="shield-icon"
               />
-              <span className="conclusao-portal-name">CyberDefense</span>
+              <span className="portal-name">CyberDefense</span>
             </div>
 
             <button
-              className="conclusao-theme-toggle"
+              className="theme-toggle"
               id="theme-toggle"
               aria-label="Alternar tema"
             >
               <svg
-                className="conclusao-sun-icon"
+                className="sun-icon"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -66,7 +66,7 @@ function Conclusao() {
                 />
               </svg>
               <svg
-                className="conclusao-moon-icon"
+                className="moon-icon"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -84,55 +84,55 @@ function Conclusao() {
           </div>
         </header>
 
-        <div className="conclusao-main">
-          <section className="conclusao-case-status-section">
-            <div className="conclusao-case-status-container">
-              <h2 className="conclusao-case-status-title">Case Status</h2>
-              <div className="conclusao-status-steps">
-                <div className="conclusao-status-step">
-                  <div className="conclusao-status-icon completed"></div>
-                  <span className="conclusao-status-text">Evidência Recebida</span>
+        <main>
+          <section className="case-status-section">
+            <div className="case-status-container">
+              <h2 className="case-status-title">Case Status</h2>
+              <div className="status-steps">
+                <div className="status-step">
+                  <div className="status-icon completed"></div>
+                  <span className="status-text">Evidência Recebida</span>
                 </div>
-                <div className="conclusao-status-bar">
-                  <div className="conclusao-status-bar-filled"></div>
+                <div className="status-bar">
+                  <div className="status-bar-filled"></div>
                 </div>
-                <div className="conclusao-status-step">
-                  <div className="conclusao-status-icon"></div>
-                  <span className="conclusao-status-text">Em Análise</span>
+                <div className="status-step">
+                  <div className="status-icon"></div>
+                  <span className="status-text">Em Análise</span>
                 </div>
-                <div className="conclusao-status-bar"></div>
-                <div className="conclusao-status-step">
-                  <div className="conclusao-status-icon"></div>
-                  <span className="conclusao-status-text">Enviado a Instituição</span>
+                <div className="status-bar"></div>
+                <div className="status-step">
+                  <div className="status-icon"></div>
+                  <span className="status-text">Enviado a Instituição</span>
                 </div>
               </div>
             </div>
           </section>
 
-          <section className="conclusao-resposta-agressor">
+          <section className="resposta-agressor">
             <h2>Resposta do acusado</h2>
             <div id="respostaTextoagressor">{respagressor}</div>
           </section>
 
-          <section className="conclusao-resposta-escola">
+          <section className="resposta-escola">
             <h2>Resposta da Instituição</h2>
             <div id="respostaTextoinstituição">{respinstituicao}</div>
           </section>
 
-          <section className="conclusao-review-process-section">
-            <div className="conclusao-review-process-container">
-              <div className="conclusao-review-process-nav">
-                <button className="conclusao-nav-button active">
+          <section className="review-process-section">
+            <div className="review-process-container">
+              <div className="review-process-nav">
+                <button className="nav-button active">
                   Como funciona o processo de revisão?
                 </button>
-                <button className="conclusao-nav-button">Seus direitos</button>
-                <button className="conclusao-nav-button">
+                <button className="nav-button">Seus direitos</button>
+                <button className="nav-button">
                   O que acontece após o envio?
                 </button>
               </div>
-              <div className="conclusao-review-process-content">
-                <h2 className="conclusao-conclusao-review-process-title">Processo de Revisão</h2>
-                <p className="conclusao-review-process-description">
+              <div className="review-process-content">
+                <h2 className="review-process-title">Processo de Revisão</h2>
+                <p className="review-process-description">
                   Nossa equipe analisa cuidadosamente todas as evidências
                   enviadas dentro de 48 horas. Garantimos um processo de
                   avaliação justo e minucioso, mantendo rigorosos padrões de
@@ -141,31 +141,31 @@ function Conclusao() {
               </div>
             </div>
           </section>
-        </div>
+        </main>
 
-        <footer className="conclusao-site-footer">
-          <div className="conclusao-footer-container">
-            <div className="conclusao-footer-content">
-              <nav className="conclusao-footer-nav">
-                <a href="#" className="conclusao-footer-link">
+        <footer className="site-footer">
+          <div className="footer-container">
+            <div className="footer-content">
+              <nav className="footer-nav">
+                <a href="#" className="footer-link">
                   Termos de Uso
                 </a>
-                <a href="#" className="conclusao-footer-link">
+                <a href="#" className="footer-link">
                   Política de Privacidade
                 </a>
-                <a href="#" className="conclusao-footer-link">
+                <a href="#" className="footer-link">
                   Contato
                 </a>
-                <a href="#" className="conclusao-footer-link">
+                <a href="#" className="footer-link">
                   Ajuda
                 </a>
               </nav>
-              <button className="conclusao-report-button">
+              <button className="report-button">
                 <span>Reportar problema</span>
                 <img
                   src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
                   alt="Report icon"
-                  className="conclusao-report-icon"
+                  className="report-icon"
                 />
               </button>
             </div>

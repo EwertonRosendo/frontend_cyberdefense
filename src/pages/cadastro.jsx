@@ -27,7 +27,7 @@ function Cadastro() {
 
     try {
       await axios
-        .post(`/api/users.json`, {
+        .post(`${apiUrl}/users.json`, {
           user: {
             email: email,
             password: password,
@@ -52,7 +52,7 @@ function Cadastro() {
 
     const get_schools = async () => {
   try {
-      const response = await axios.get(`/api/schools.json`, {
+      const response = await axios.get(`${apiUrl}/schools.json`, {
        
       });
       
@@ -94,22 +94,51 @@ function Cadastro() {
               alt="Shield Icon"
               className="shield-icon"
             />
-            <span className="portal-name">CyberDefense Portal</span>
+            <span className="portal-name">Digital Defense Portal</span>
           </div>
+
+          <button
+            className="theme-toggle"
+            id="theme-toggle"
+            aria-label="Alternar tema"
+          >
+            <svg
+              className="sun-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              />
+            </svg>
+            <svg
+              className="moon-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              style={{ display: "none" }}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              />
+            </svg>
+          </button>
         </div>
       </header>
 
       <main>
-        <div className="login-card" style={{
-        backgroundColor: "#ffffff",
-          border: "1px solid #e5e7eb",
-          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08)",
-          padding: "20px",
-          borderRadius: "8px",
-          color: "#1f2937",
-        }}>
+        <div className="login-card">
           <div className="login-header">
-            <h1 className="login-title" style={{fontWeight:"bold"}}>Cadastro</h1>
+            <h1 className="login-title">Cadastro</h1>
             <p className="login-subtitle">
               Todos merecem uma chance de
               <br />
@@ -125,7 +154,6 @@ function Cadastro() {
             <div className="form-group">
               <label htmlFor="email">Seu e-mail</label>
               <input
-                className="custom-select"
                 type="email"
                 id="email"
                 placeholder="Digite seu e-mail"
@@ -134,28 +162,10 @@ function Cadastro() {
                 required
               />
             </div>
-            <div className="form-group">
-              <label> Sua instituição:</label>
-              <select
-                name="schools"
-                id="schools"
-                value={school}
-                onChange={(e) => setSchool(e.target.value)}
-                className="custom-select"
-              >
-                <option value={0} key={999}>Selecione a sua instituição</option>
-                {loading ? (
-                  <option disabled key={998}>Carregando instituições...</option>
-                ) : (
-                  renderSchools(schools)
-                )}
-              </select>
-            </div>
 
             <div className="form-group">
               <label htmlFor="password">Crie sua nova senha</label>
               <input
-                className="custom-select"
                 type="password"
                 id="password"
                 placeholder="Digite sua senha"
@@ -168,7 +178,6 @@ function Cadastro() {
             <div className="form-group">
               <label htmlFor="confirm-password">Confirmar senha</label>
               <input
-                className="custom-select"
                 type="password"
                 id="confirm-password"
                 placeholder="Confirme sua senha"
@@ -181,8 +190,24 @@ function Cadastro() {
             <div className="remember-option" style={{ marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
               <input type="checkbox" id="remember" />
               <label htmlFor="remember">Lembrar Senha?</label>
+
+              <select 
+                name="schools" 
+                id="schools" 
+                value={school}
+                onChange={(e) => setSchool(e.target.value)}
+              >
+                <option value={0} key={999}>Selecione a sua instituição</option>
+                {loading ? (
+                  <option disabled key={998}>Carregando instituições...</option>
+                ) : (
+                  renderSchools(schools)
+                )}
+              </select>
+
             </div>
-            <button type="submit" className="login-button" style={{color:"white", fontWeight:"bold", backgroundColor:"#1b6de0"}}>
+
+            <button type="submit" className="login-button">
               Cadastrar
             </button>
           </form>
@@ -205,7 +230,7 @@ function Cadastro() {
       <footer>
         <div className="footer-content">
           <div className="copyright">
-            © 2025 CyberDefense Portal. All rights reserved.
+            © 2025 Digital Defense Portal. All rights reserved.
           </div>
         </div>
       </footer>
