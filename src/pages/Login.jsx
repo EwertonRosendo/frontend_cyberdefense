@@ -70,7 +70,7 @@ function Login() {
               alt="Shield Icon"
               className="shield-icon"
             />
-            <span className="portal-name">Digital Defense Portal</span>
+            <span className="portal-name">CyberDefense Portal</span>
           </div>
 
           {/* Botão de alternar tema (claro/escuro) */}
@@ -169,7 +169,7 @@ function Login() {
       <footer>
         <div className="footer-content">
           <div className="copyright">
-            © 2025 Digital Defense Portal. All rights reserved.
+            © 2025 CyberDefense Portal. All rights reserved.
           </div>
         </div>
       </footer>
