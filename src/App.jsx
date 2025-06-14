@@ -21,9 +21,9 @@ function App() {
             <span className="portal-name">CyberDefense Portal</span>
           </div>
             <nav className="App-main-nav">
-              <a href="#" onClick={() => navigate("/")} >Página inicial</a>              
-              <a href="#" onClick={() => navigate("/login")}>Analisar casos</a>
-              <a href="#">Contato</a>
+              <button className="App-register-button"  href="#" onClick={() => navigate("/")} >Página inicial</button >              
+              <button  href="#" onClick={() => navigate("/login")}>Analisar casos</button >
+              <button  href="#">Contato</button >
             </nav>
             <div className="App-auth-buttons">
               <button className="App-register-button" onClick={() => navigate("/login")}>Login</button>

@@ -157,18 +157,13 @@ function Login() {
           <div className="signup-link">
             <span
               className="signup-text"
-              style={{ backgroundColor: "white", fontSize: "15px" }}
+             
             >
               Não tem uma conta?{" "}
             </span>
             <button
               onClick={() => navigate("/cadastro")}
-              className="signup-action"
-              style={{
-                backgroundColor: "white",
-                fontSize: "15px",
-                color: "#434343",
-              }}
+                      
             >
               Click aqui
             </button>
