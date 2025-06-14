@@ -96,15 +96,25 @@ const School = () => {
     <div>
       <div>
         <header>
-          <div className="header-content">
-            <div className="logo-container">
+          <div className="denuncia-header-content">
+            <div className="denuncia-logo-container">
               <img
                 src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
                 alt="Shield Icon"
-                className="shield-icon"
+                className="denuncia-shield-icon"
               />
-              <span className="portal-name">CyberDefense</span>
+              <span className="denuncia-portal-name">CyberDefense</span>
             </div>
+            <div>
+              
+              
+              
+              <button onClick={() => navigate('/')}>
+                Página Inicial
+              </button>
+            </div>
+          
+            
           </div>
         </header>
 
