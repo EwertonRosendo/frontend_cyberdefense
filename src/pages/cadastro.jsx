@@ -98,8 +98,11 @@ function Cadastro() {
             />
             <span className="portal-name">CyberDefense Portal</span>
           </div>
+          <div className="App-auth-buttons">
+              <button className="App-register-button" onClick={() => navigate("/login")}>Login</button>                            
+            </div>
             <nav className="App-main-nav">
-              <a href="#" onClick={() => navigate("/")} >Página inicial</a>              
+              <button href="#" onClick={() => navigate("/")} >Página inicial</button>              
               
             </nav>
             

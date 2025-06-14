@@ -26,7 +26,15 @@ function Denuncia() {
   const [hasUserAnswerd, setHasUserAnswerd] = useState(true);
   const [schoolHasQuestions, setSchoolHasQuestions] = useState(true)
   
-  
+  const handleLogout = () => {
+    // Remove o cookie
+    Cookies.remove("userId");
+    Cookies.remove("userToken");
+    Cookies.remove("userSchool"); // ou o nome do cookie usado para login
+
+    // Redireciona para a página de login
+    navigate('/login');
+  };
   const handleDenuncia = async (e) => {
     e.preventDefault();
 
@@ -258,10 +266,14 @@ const handleEnviarRespostas = async () => {
               <span className="denuncia-portal-name">CyberDefense</span>
             </div>
             <div>
+              
+              
+              
               <button onClick={() => navigate('/school')}>
                 Area administrativa
               </button>
             </div>
+            <button className="logout" onClick={handleLogout}>Logout</button>
             
           </div>
         </header>

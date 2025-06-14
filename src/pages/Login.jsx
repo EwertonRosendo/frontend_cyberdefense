@@ -23,7 +23,7 @@ function Login() {
 
     // Verificação rápida de login para administrador (sem usar banco de dados)
     if (email === "testeadm@email.com" && password === "123456") {
-      navigate("/denuncia"); // ← trocar aqui pela rota correta da página de admin quando for criada
+      navigate("/Defesa"); // ← trocar aqui pela rota correta da página de admin quando for criada
       return; // Encerra a função aqui se for admin
     }
 
@@ -48,7 +48,7 @@ function Login() {
           console.log("id do usuário:" + userId);
           console.log("token do usuário:" + userToken);
           console.log("escola do usuário:" + userSchool);
-          navigate("/denuncia");
+          navigate("/Defesa");
         }
       })
 
@@ -61,23 +61,26 @@ function Login() {
   return (
     <div>
       {/* Cabeçalho da página */}
-       <div className="App-site-header">
+      <div className="App-site-header">
         <div className="App-header-container">
           <div className="App-header-content">
             <div className="logo-container">
-            {/* Logo do sistema */}
-            <img
-              src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
-              alt="Shield Icon"
-              className="shield-icon"
-            />
-            <span className="portal-name">CyberDefense Portal</span>
-          </div>
+              {/* Logo do sistema */}
+              <img
+                src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
+                alt="Shield Icon"
+                className="shield-icon"
+              />
+              <span className="portal-name">CyberDefense Portal</span>
+            </div>
+            <div className="App-auth-buttons">
+              <button className="App-register-button" onClick={() => navigate("/Cadastro")}>Registrar</button>                            
+            </div>
             <nav className="App-main-nav">
-              <a href="#" onClick={() => navigate("/")} >Página inicial</a>              
-              
+              <button href="#" onClick={() => navigate("/")}>
+                Página inicial
+              </button>
             </nav>
-            
           </div>
         </div>
       </div>
@@ -137,18 +140,35 @@ function Login() {
             </div>
 
             {/* Botão de login */}
-            <button type="submit" className="login-button" style={{color:"white", fontWeight:"bold", backgroundColor:"#1b6de0"}}>
+            <button
+              type="submit"
+              className="login-button"
+              style={{
+                color: "white",
+                fontWeight: "bold",
+                backgroundColor: "#1b6de0",
+              }}
+            >
               fazer login
             </button>
           </form>
 
           {/* Link para página de cadastro */}
           <div className="signup-link">
-            <span className="signup-text" style={{backgroundColor:"white", fontSize:"15px"}}>Não tem uma conta? </span>
+            <span
+              className="signup-text"
+              style={{ backgroundColor: "white", fontSize: "15px" }}
+            >
+              Não tem uma conta?{" "}
+            </span>
             <button
               onClick={() => navigate("/cadastro")}
               className="signup-action"
-              style={{backgroundColor:"white", fontSize:"15px", color:"#434343"}}
+              style={{
+                backgroundColor: "white",
+                fontSize: "15px",
+                color: "#434343",
+              }}
             >
               Click aqui
             </button>
