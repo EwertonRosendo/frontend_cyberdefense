@@ -86,9 +86,11 @@ function Cadastro() {
   };
   return (
     <div>
-      <header>
-        <div className="header-content">
-          <div className="logo-container">
+       <div className="App-site-header">
+        <div className="App-header-container">
+          <div className="App-header-content">
+            <div className="logo-container">
+            {/* Logo do sistema */}
             <img
               src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
               alt="Shield Icon"
@@ -96,8 +98,14 @@ function Cadastro() {
             />
             <span className="portal-name">CyberDefense Portal</span>
           </div>
+            <nav className="App-main-nav">
+              <a href="#" onClick={() => navigate("/")} >Página inicial</a>              
+              
+            </nav>
+            
+          </div>
         </div>
-      </header>
+      </div>
 
       <main>
         <div className="login-card" style={{

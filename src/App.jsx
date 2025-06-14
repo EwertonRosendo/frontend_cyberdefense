@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./App.css";
 
+
 function App() {
   const navigate = useNavigate();
 
@@ -10,17 +11,22 @@ function App() {
       <div className="App-site-header">
         <div className="App-header-container">
           <div className="App-header-content">
-            <div className="App-logo">
-              <a href="#">CyberDefense</a>
-            </div>
+            <div className="logo-container">
+            {/* Logo do sistema */}
+            <img
+              src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
+              alt="Shield Icon"
+              className="shield-icon"
+            />
+            <span className="portal-name">CyberDefense Portal</span>
+          </div>
             <nav className="App-main-nav">
-              <a href="#">Página inicial</a>
-              
+              <a href="#" onClick={() => navigate("/")} >Página inicial</a>              
               <a href="#" onClick={() => navigate("/login")}>Analisar casos</a>
               <a href="#">Contato</a>
             </nav>
             <div className="App-auth-buttons">
-              <button className="App-login-button" onClick={() => navigate("/login")}>Login</button>
+              <button className="App-register-button" onClick={() => navigate("/login")}>Login</button>
               <button onClick={() => navigate("/cadastro")} className="App-register-button">Registrar</button>              
             </div>
           </div>
@@ -32,7 +38,7 @@ function App() {
           <div>
             <div className="App-hero-content">
               <h1 className="App-hero-title">
-                Está sofrendo alguma denúncia sobre práticas de cyberbullying?
+                Acusado por Cyberbullying? Revele a sua versão.
               </h1>
               <p className="App-hero-subtitle">
                 Pronto para buscar ajuda? deixe nos mediar a situação.
@@ -54,7 +60,7 @@ function App() {
             <div className="App-features-container">
               <div className="App-feature-card">
                 <img
-                  src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
+                  src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/improve-school-page/src/pages/img/escudo.png"
                   alt="Ícone de Segurança"
                   className="App-feature-icon"
                 />
@@ -67,7 +73,7 @@ function App() {
 
               <div className="App-feature-card">
                 <img
-                  src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
+                  src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/improve-school-page/src/pages/img/martelo.png"
                   alt="Ícone de Análise Legal"
                   className="App-feature-icon"
                 />
@@ -79,7 +85,7 @@ function App() {
 
               <div className="App-feature-card">
                 <img
-                  src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
+                  src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/improve-school-page/src/pages/img/terceito_icone.png"
                   alt="Ícone de Privacidade"
                   className="App-feature-icon"
                 />

@@ -61,9 +61,10 @@ function Login() {
   return (
     <div>
       {/* Cabeçalho da página */}
-      <header>
-        <div className="header-content">
-          <div className="logo-container">
+       <div className="App-site-header">
+        <div className="App-header-container">
+          <div className="App-header-content">
+            <div className="logo-container">
             {/* Logo do sistema */}
             <img
               src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
@@ -72,10 +73,14 @@ function Login() {
             />
             <span className="portal-name">CyberDefense Portal</span>
           </div>
-
-          {/* Botão de alternar tema (claro/escuro) */}
+            <nav className="App-main-nav">
+              <a href="#" onClick={() => navigate("/")} >Página inicial</a>              
+              
+            </nav>
+            
+          </div>
         </div>
-      </header>
+      </div>
 
       {/* Conteúdo principal da página */}
       <main>
