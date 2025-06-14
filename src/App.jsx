@@ -1,11 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./App.css";
+import { useRef } from "react";
 
 
 function App() {
   const navigate = useNavigate();
-
+  const footerRef = useRef(null); // 1. Criando a referência
+  const scrollToFooter = () => {
+  footerRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <div className="App-body">
       <div className="App-site-header">
@@ -22,8 +26,9 @@ function App() {
           </div>
             <nav className="App-main-nav">
               <button className="App-register-button"  href="#" onClick={() => navigate("/")} >Página inicial</button >              
-              <button  href="#" onClick={() => navigate("/login")}>Analisar casos</button >
-              <button  href="#">Contato</button >
+              <button  href="#" onClick={() => navigate("/school")}>Analisar casos</button >
+              <button onClick={scrollToFooter}>Contato</button>
+
             </nav>
             <div className="App-auth-buttons">
               <button className="App-register-button" onClick={() => navigate("/login")}>Login</button>
@@ -204,7 +209,7 @@ function App() {
             </div>
 
             <div className="App-footer-column">
-              <h3 className="App-footer-title">Contato</h3>
+              <h3 className="App-footer-title" ref={footerRef}>Contato</h3>
               <ul className="App-footer-contact">
                 <li>
                   <img
