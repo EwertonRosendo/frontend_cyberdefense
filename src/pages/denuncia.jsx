@@ -269,7 +269,7 @@ const handleEnviarRespostas = async () => {
               
               
               
-              <button onClick={() => navigate('/school')}>
+              <button onClick={() => navigate('/administracao')}>
                 Area administrativa
               </button>
             </div>
@@ -284,8 +284,15 @@ const handleEnviarRespostas = async () => {
               <h2 className="denuncia-case-status-title">Case Status</h2>
               <div className="denuncia-status-steps">
                 <div className="denuncia-status-step">
-                  <div className="denuncia-status-icon completed"></div>
+                  <div className="denuncia-status-icon completed">
+                    <img
+                      src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/improve-school-page/src/pages/img/ok.png"
+                      alt="Ícone de pesquisa"                      
+                    />
+                  </div>
+
                   <span className="denuncia-status-text">Evidência Recebida</span>
+
                 </div>
                 <div className="denuncia-status-bar">
                   <div className="denuncia-status-bar-filled"></div>
@@ -330,6 +337,7 @@ const handleEnviarRespostas = async () => {
                       
                     ></textarea>:
                     <textarea
+                      className="denuncia-textarea"
                       id="case-description"
                       placeholder="Por favor, forneça um contexto sobre o seu caso..."
                       value={description}

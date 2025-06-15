@@ -200,6 +200,7 @@ input, textarea, select {
 
 .denuncia-case-description textarea {
   margin-bottom: 24px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
 }
 
 .denuncia-case-description label {
@@ -250,9 +251,16 @@ input, textarea, select {
   cursor: pointer;
   position: relative;
 }
+.denuncia-nav-button:hover {
+  color: white;
+}
 
 .denuncia-nav-button.active {
   color: #1b6de0;
+}
+
+.denuncia-nav-button.active:hover {
+  color: white;
 }
 /* Submit Case Button Styles */
 .denuncia-submit-case-button {
@@ -333,6 +341,9 @@ input, textarea, select {
   cursor: pointer;
   font-size: 14px;
 }
+.denuncia-report-button:hover {
+  color: white;  
+}
 
 .denuncia-report-icon {
   width: 16px;
@@ -341,7 +352,11 @@ input, textarea, select {
 
 .denuncia-schoolname{  
   margin-bottom: 20px;
-  font-weight: bold;
+  font-weight: bold;  
+}
+
+.denuncia-textarea{
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
 }
 
 

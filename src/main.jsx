@@ -61,7 +61,7 @@ const router = createBrowserRouter([
     element: <ProcessResult />,
   },
   {
-    path: "school",
+    path: "administracao",
     element: <School />,
   },
 ]);

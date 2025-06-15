@@ -26,7 +26,7 @@ function App() {
           </div>
             <nav className="App-main-nav">
               <button className="App-register-button"  href="#" onClick={() => navigate("/")} >Página inicial</button >              
-              <button  href="#" onClick={() => navigate("/school")}>Analisar casos</button >
+              <button  href="#" onClick={() => navigate("/administracao")}>Analisar casos</button >
               <button onClick={scrollToFooter}>Contato</button>
 
             </nav>
