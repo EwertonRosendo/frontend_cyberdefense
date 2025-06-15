@@ -303,7 +303,7 @@ const handleEnviarRespostas = async () => {
                 <div className="denuncia-status-step">
                   <div className="denuncia-status-icon">
                     <img
-                      src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/improve-school-page/src/pages/img/pesquisa.png"
+                      src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/improve-school-page/src/pages/img/martelo2.png"
                       alt="Ícone de pesquisa"                      
                     />
                   </div>

@@ -213,7 +213,7 @@ function App() {
               <ul className="App-footer-contact">
                 <li>
                   <img
-                    src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
+                    src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/improve-school-page/src/pages/img/email.png"
                     alt="Email icon"
                     className="App-contact-icon"
                   />
@@ -221,7 +221,7 @@ function App() {
                 </li>
                 <li>
                   <img
-                    src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/main/src/pages/img/logo.jpg"
+                    src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/improve-school-page/src/pages/img/telefone.png"
                     alt="Phone icon"
                     className="App-contact-icon"
                   />
