@@ -292,13 +292,21 @@ const handleEnviarRespostas = async () => {
                 </div>
                 <div className="denuncia-status-step">
                   <div className="denuncia-status-icon">
-                    
+                    <img
+                      src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/improve-school-page/src/pages/img/pesquisa.png"
+                      alt="Ícone de pesquisa"                      
+                    />
                   </div>
                   <span className="denuncia-status-text">Em Análise</span>
                 </div>
                 <div className="denuncia-status-bar"></div>
                 <div className="denuncia-status-step">
-                  <div className="denuncia-status-icon"></div>
+                  <div className="denuncia-status-icon">
+                    <img
+                      src="https://raw.githubusercontent.com/EwertonRosendo/frontend_cyberdefense/refs/heads/improve-school-page/src/pages/img/pesquisa.png"
+                      alt="Ícone de pesquisa"                      
+                    />
+                  </div>
                   <span className="denuncia-status-text">Enviado a Instituição</span>
                 </div>
               </div>
