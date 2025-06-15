@@ -217,7 +217,10 @@ function App() {
                     alt="Email icon"
                     className="App-contact-icon"
                   />
-                  <span>Email: support&#64;gmail.com</span>
+                  <span style={{ fontSize: '12px' }}>
+                    Email: cyberbullying.group.uninassau@gmail.com
+                  </span>
+
                   
                 </li>
                 <li>
