@@ -217,7 +217,8 @@ function App() {
                     alt="Email icon"
                     className="App-contact-icon"
                   />
-                  <span>Email: support&#64;cyberdefense.com</span>
+                  <span style="font-size: 12px;">Email: cyberbullying.group.uninassau&#64;gmail.com</span>
+                  
                 </li>
                 <li>
                   <img
