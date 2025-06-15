@@ -177,6 +177,15 @@
   margin: 16px 0;
 }
 
+input, textarea, select {  
+  border: 1px solid #d1d5db;
+  color: #111827;
+  padding: 10px;
+  border-radius: 4px;
+  width: 320px;
+  box-sizing: border-box;
+}
+
 .denuncia-select-files-button:hover {
   background-color: #1658b3;
 }

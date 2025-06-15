@@ -291,7 +291,9 @@ const handleEnviarRespostas = async () => {
                   <div className="denuncia-status-bar-filled"></div>
                 </div>
                 <div className="denuncia-status-step">
-                  <div className="denuncia-status-icon"></div>
+                  <div className="denuncia-status-icon">
+                    
+                  </div>
                   <span className="denuncia-status-text">Em Análise</span>
                 </div>
                 <div className="denuncia-status-bar"></div>
