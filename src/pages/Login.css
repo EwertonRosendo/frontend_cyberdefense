@@ -53,6 +53,15 @@ input, textarea, select {
   width: 100%;
   box-sizing: border-box;
 }
+.loginfix-button {
+  color: white;
+  font-weight: bold;
+  background-color: #1b6de0;
+}
+
+.loginfix-button:hover{
+  background-color: #1658b3;
+}
 
 input::placeholder, textarea::placeholder {
   color: #adaebc;

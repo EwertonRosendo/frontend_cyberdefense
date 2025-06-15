@@ -142,12 +142,8 @@ function Login() {
             {/* Botão de login */}
             <button
               type="submit"
-              className="login-button"
-              style={{
-                color: "white",
-                fontWeight: "bold",
-                backgroundColor: "#1b6de0",
-              }}
+              className="loginfix-button"
+             
             >
               fazer login
             </button>
